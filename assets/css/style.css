@@ -1,0 +1,390 @@
+/*=================================================================
+Template Name: BioTech
+Author: Aroy
+=================================================================*/
+html {
+    background-color: #0f1e31;
+    color: #bad8dd;
+    scrollbar-color: #ff00d4 #040b1e;
+    scrollbar-width: thin;
+}
+
+body {
+    background-color: #171d2e;
+    font-family: "Anaheim", sans-serif;
+    color: #bad8dd;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    font-family: "Quattrocento Sans", sans-serif;
+    color: #afbac4;
+}
+
+p {
+    font-family: "Quattrocento Sans", sans-serif;
+}
+
+[scroll-behavior=smooth] {
+    scroll-behavior: smooth;
+}
+
+pre {
+    color: #afbac4;
+}
+
+
+/*=================================================================
+Basic Setup
+=================================================================*/
+::-moz-selection {
+    /* Firefox Code */
+    color: #fff;
+    background: #57cbcc;
+}
+
+::selection {
+    color: #fff;
+    background: #57cbcc;
+}
+
+hr {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+figure {
+    margin: 0;
+}
+
+a {
+    color: #57cbcc;
+    transition: all .3s ease-in 0s;
+}
+
+iframe {
+    border: 0;
+}
+
+a, a:focus, a:hover {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:focus, a:hover {
+    color: #c910c9;
+}
+
+.kill-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
+
+md-50 {
+    margin-bottom: 50px;
+}
+
+.btn {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: all .3s ease-in 0s;
+}
+
+.btn:focus {
+    color: #ddd;
+    border-radius: 15px;
+}
+
+.btn-transparent {
+    border: 1px solid #4e595f;
+}
+
+.btn-transparent:hover, .btn-transparent:focus {
+    background-color: #4e00556c;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.border-biotech {
+    border-top: 2px solid rgba(236, 239, 241, 0.07);
+    border: 1px;
+    margin: 15px auto 0;
+    position: relative;
+    width: 30%;
+}
+
+.border-biotech:before {
+    background-color: #fff;
+    content: '';
+    height: 6px;
+    left: 50%;
+    margin-left: -20px;
+    position: absolute;
+    top: -4px;
+    width: 50px;
+    background-color: #57cbcc;
+}
+
+.border-glow {
+    box-shadow: 0 4px 8px 0 rgb(4, 0, 255), 0 6px 20px 0 rgb(204, 0, 255);
+}
+
+.border-gradient {
+    position: relative;
+    width: 450px;
+    padding: 40px 0;
+    font-size: 5em;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 5px;
+    background-color: #020117;
+}
+
+.border-gradient::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+    z-index: -1;
+}
+
+.border-gradient::before {
+    content:  '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+    z-index: -2;
+    filter: blur(40px);
+}
+
+.color {
+    color: #6cb670;
+}
+
+.sub-title {
+    padding: 0 0 50px;
+}
+
+.sub-title>h3 {
+    border-left: 3px solid #ddd;
+    border-right: 3px solid #ddd;
+    display: inline-block;
+    padding: 5px 25px;
+    text-transform: uppercase;
+}
+
+.btn.active:focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0;
+}
+
+.bg-one {
+    background-color: #353b43;
+}
+
+.bg-dark {
+    background: #242930;
+}
+
+.parallax-section {
+    background-attachment: fixed !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+
+
+/*=================================================================
+Banner
+=================================================================*/
+.hero-area {
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-area:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.63);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-area .block {
+    text-align: center;
+    z-index: 99;
+}
+
+.hero-area .block .video-button {
+    background: #fff;
+    color: #57cbcc;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+}
+
+.hero-area .block .video-button i {
+    line-height: 60px;
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+.hero-area .block h1 {
+    font-size: 90px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .hero-area .block h1 {
+        font-size: 60px;
+    }
+}
+
+.hero-area .block p {
+    color: #fff;
+    font-size: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.hero-area .block .btn-transparent {
+    margin-top: 40px;
+    border-color: #fff;
+    padding: 14px 50px;
+    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-area-video {
+    height: 100vh;
+    position: inherit !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-area-video .block {
+    color: #fff;
+    text-align: center;
+}
+
+.hero-area-video .block h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-area-video .block p {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-area-video .block .btn-main {
+    margin-top: 20px;
+}
+
+
+/*=================================================================
+    Footer
+=================================================================*/
+.social-icon {
+    padding: 60px 0 35px;
+}
+
+.social-icon ul {
+    text-align: center;
+}
+
+.social-icon ul li {
+    margin-bottom: 4px;
+}
+
+.social-icon ul li a {
+    background-color: #26292e;
+    border: 2px solid #57cbcc;
+    border-radius: 50%;
+    display: block;
+    height: 70px;
+    width: 70px;
+    transition: all 400ms ease-out 0s;
+}
+
+.social-icon ul li a:hover {
+    background: #57cbcc;
+}
+
+.social-icon ul li a:hover i {
+    color: #4e0055;
+    opacity: 1;
+}
+
+.social-icon ul li a i {
+    color: #57cbcc;
+    display:  inline-block;
+    font-size: 32px;
+    line-height: 70px;
+    margin: 0;
+    opacity: 0.3;
+    transition: all 400ms ease-out 0s;   
+}
+
+.copyright {
+    padding: 20px 0;
+    color: #fff;
+}
+
+.copyright img {
+    margin-bottom: 15px;
+}
+
+.copyright p {
+    margin-top: 10px;
+}
+
+#scrollUp {
+    border: 1px solid #4e595f;
+    bottom: 15px;
+    color: #fff;
+    display: none;
+    padding: 8px 12px;
+    position: fixed;
+    right: 20px;
+    z-index: 600;
+}
+
+#scrollUp:hover {
+    background-color: #57cbcc;
+    border: 1px solid #57cbcc;
+}
