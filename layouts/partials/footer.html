@@ -21,6 +21,16 @@
                     </ul>
                 </div>
                 
+                {{ if  site.Params.sketchfab.enable }}
+                {{ "<!-- Social Sketchfab Links -->" | safeHTML }}
+                <div class="text-center">
+                    <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
+                    <a href="{{ site.Params.sketchfab.link | safeHTML }}">
+                        <img class="social-icon-img" src="{{ site.Params.sketchfab.img }}"> 
+                    </a>
+                    </div>
+                {{ end }}
+
                 {{ "<!-- Copyright -->" | safeHTML }}
                 <div class="copyright text-center">
                     <a href="{{ site.Home.Permalink }}">
