@@ -1,0 +1,9 @@
+{{ if site.Params.preloader.enable }}
+{{ "<!-- Preloder -->" | safeHTML }}
+<div class="preloader">
+    {{with site.Params.preloader.preloader}}
+    <img src="{{ . | absURL }}" alt="preloader">
+    {{ end }}
+</div>
+{{ "<!-- /Preloder -->" | safeHTML }}
+{{ end }}
