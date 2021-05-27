@@ -22,7 +22,7 @@
                 </div>
                 
                 {{ if  site.Params.sketchfab.enable }}
-                {{ "<!-- Social Sketchfab Links -->" | safeHTML }}
+                {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
                 <div class="text-center">
                     <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
                     <a href="{{ site.Params.sketchfab.link | safeHTML }}">
@@ -34,7 +34,7 @@
                 {{ "<!-- Copyright -->" | safeHTML }}
                 <div class="copyright text-center">
                     <a href="{{ site.Home.Permalink }}">
-                        <img src="{{ site.Params.logo | safeURL }}">
+                        <img src="{{ site.Params.logo | safeURL }}" height="128">
                     </a>
                     <br>
                     <p>{{ site.Params.copyright | markdownify }}</p>
