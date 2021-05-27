@@ -28,7 +28,7 @@
                     <div class="social-icon text-center col">
                         <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
                         <a href="{{ site.Params.sketchfab.link | safeHTML }}">
-                            <img class="social-icon-img" src="{{ site.Params.sketchfab.img | safeURL }}"> 
+                            <img class="social-icon-img" src="{{ site.Params.sketchfab.img | absURL }}"> 
                         </a>
                         </div>
                     {{ end }}
@@ -37,7 +37,7 @@
                 {{ "<!-- Copyright -->" | safeHTML }}
                 <div class="copyright text-center">
                     <a href="{{ site.Home.Permalink }}">
-                        <img src="{{ site.Params.logo | safeURL }}" height="128">
+                        <img src="{{ site.Params.logo | absURL }}" height="128">
                     </a>
                     <br>
                     <p>{{ site.Params.copyright | markdownify }}</p>
