@@ -9,14 +9,35 @@ html {
     scrollbar-width: thin;
 }
 
+html:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
+    background: var(--main-color, #ff00d4) !important;
+}
+
+html:not([hide-scrollbar]) ::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #040b1e !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color, #ff00d4) !important;
+}
+
 body {
-    background-color: #171d2e;
+    background-color: #040b1e;
     font-family: "Anaheim", sans-serif;
     color: #bad8dd;
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 400;
     font-family: "Quattrocento Sans", sans-serif;
     color: #afbac4;
@@ -36,7 +57,7 @@ pre {
 
 
 /*=================================================================
-Basic Setup
+  Basic Setup
 =================================================================*/
 ::-moz-selection {
     /* Firefox Code */
@@ -66,12 +87,15 @@ iframe {
     border: 0;
 }
 
-a, a:focus, a:hover {
+a,
+a:focus,
+a:hover {
     text-decoration: none;
     outline: 0;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover {
     color: #c910c9;
 }
 
@@ -83,7 +107,7 @@ a:focus, a:hover {
     padding: 0 !important;
 }
 
-md-50 {
+.md-50 {
     margin-bottom: 50px;
 }
 
@@ -104,7 +128,8 @@ md-50 {
     border: 1px solid #4e595f;
 }
 
-.btn-transparent:hover, .btn-transparent:focus {
+.btn-transparent:hover,
+.btn-transparent:focus {
     background-color: #4e00556c;
     border: 1px solid transparent;
     color: #fff;
@@ -112,7 +137,7 @@ md-50 {
 
 .border-biotech {
     border-top: 2px solid rgba(236, 239, 241, 0.07);
-    border: 1px;
+    height: 1px;
     margin: 15px auto 0;
     position: relative;
     width: 30%;
@@ -209,10 +234,374 @@ md-50 {
     padding: 0 !important;
 }
 
+.inline-block {
+    display: inline-block;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn.focus,
+.btn:focus {
+    box-shadow: none;
+}
+
+figure {
+    margin: 0;
+}
+
+a {
+    transition: all .2s ease-in 0s;
+}
+
+iframe {
+    border: 0;
+}
+
+a,
+a:focus,
+a:hover {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:focus,
+a:hover {
+    color: #57cbcc;
+}
+
+.btn-main {
+    background: #57cbcc;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px 35px;
+    text-transform: uppercase;
+}
+
+.btn-main:hover {
+    background: #2c9091;
+    color: #fff;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+}
+
+.section-sm {
+    padding: 70px 0;
+}
+
+.section-xs {
+    padding: 50px 0;
+}
+
+.btn:focus {
+    color: #ddd;
+}
+
+#home {
+    position: relative;
+}
+
+.btn.active:focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0;
+}
+
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2c2f36;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.title {
+    padding-bottom: 60px;
+}
+
+.title h2 {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 38px;
+    color: #fff;
+}
+
+.title h2 span {
+    color: #57cbcc;
+}
+
+.title p {
+    color: #666;
+}
+
+.title.title-white h2 {
+    color: #fff;
+}
+
+.bg-gray {
+    background: #f9f9f9;
+}
+
+.section-bg {
+    background: #040b1e;
+}
+
+.overly {
+    position: relative;
+}
+
+.overly:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.096);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.header-bradcrumb {
+    background: transparent;
+}
+
+.header-bradcrumb a,
+.header-bradcrumb .active {
+    color: #cfcfcf;
+    font-weight: 200;
+    font-family: "Quattrocento Sans", sans-serif;
+}
+
+.header-bradcrumb a:hover {
+    color: #57cbcc;
+}
+
+.slick-slide {
+    outline: none;
+}
+
+/* CSS mfp-with-zoom class */
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+.logo {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.single-page-header {
+    background-image: url("../images/about/about-header.jpg");
+    background-size: cover;
+    padding: 140px 0 70px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.single-page-header:before {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
 
 
 /*=================================================================
-Banner
+    Navigation
+=================================================================*/
+.navigation {
+    background-color: #040b1e;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link {
+    color: #040b1e;
+}
+
+.navbar-toggler:focus {
+    outline: 0;
+}
+
+.bg-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-area {
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-area:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.63);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-area .block {
+    text-align: center;
+    z-index: 99;
+}
+
+.hero-area .block .video-button {
+    background: #fff;
+    color: #57cbcc;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+}
+
+.hero-area .block .video-button i {
+    line-height: 60px;
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+.hero-area .block h1 {
+    font-size: 90px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .hero-area .block h1 {
+        font-size: 60px;
+    }
+}
+
+.hero-area .block p {
+    color: #fff;
+    font-size: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.hero-area .block .btn-transparent {
+    margin-top: 40px;
+    border-color: #fff;
+    padding: 14px 50px;
+    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-area-video {
+    height: 100vh;
+    position: inherit !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-area-video .block {
+    color: #fff;
+    text-align: center;
+}
+
+.hero-area-video .block h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-area-video .block p {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-area-video .block .btn-main {
+    margin-top: 20px;
+}
+
+.dark-bg {
+    background: rgba(0, 0, 0, 0.76);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+
+/*=================================================================
+    Banner
 =================================================================*/
 .hero-area {
     background-size: cover;
@@ -360,6 +749,14 @@ Banner
     transition: all 400ms ease-out 0s;   
 }
 
+.social-icon-img {
+    padding: 10px;
+}
+
+.social-icon-img:hover {
+    opacity: 60%;
+}
+
 .copyright {
     padding: 20px 0;
     color: #fff;
@@ -387,4 +784,25 @@ Banner
 #scrollUp:hover {
     background-color: #57cbcc;
     border: 1px solid #57cbcc;
+}
+
+
+/* =============================================
+    Cookie Box 
+============================================= */
+.cookie-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 1rem 2rem;
+    background: #0f1e31;
+    transition: all .75s cubic-bezier(.19, 1, .22, 1);
+    color: #fdfdfd;
+    z-index: 10000;
+}
+  
+.cookie-box-hide {
+    display: none;
 }
