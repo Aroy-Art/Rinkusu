@@ -99,6 +99,20 @@ a:hover {
     color: #c910c9;
 }
 
+table {
+    border: 1px solid #750cf2;
+    border-collapse: collapse;
+    background-color: #0f1e31;
+}
+
+table, td {
+    border: 1px solid #750cf2;
+}
+
+table, th {
+    border: 1px solid #750cf2;
+}
+
 .kill-margin-bottom {
     margin-bottom: 0 !important;
 }
@@ -130,7 +144,7 @@ a:hover {
 
 .btn-transparent:hover,
 .btn-transparent:focus {
-    background-color: #4e00556c;
+    background-color: #ff00b31f;
     border: 1px solid transparent;
     color: #fff;
 }
@@ -157,6 +171,10 @@ a:hover {
 
 .border-glow {
     box-shadow: 0 4px 8px 0 rgb(4, 0, 255), 0 6px 20px 0 rgb(204, 0, 255);
+}
+.border-glow-2 {
+    box-shadow: 8px -8px 10px 0px rgb(4, 0, 255), -8px 8px 10px 0px rgb(204, 0, 255);
+    border-radius: 5px;
 }
 
 .border-gradient {
@@ -216,11 +234,13 @@ a:hover {
 }
 
 .bg-one {
-    background-color: #353b43;
+    background-color: #0f1e31;
+    padding-top: 16px;
+    border-radius: 18px;
 }
 
 .bg-dark {
-    background: #242930;
+    background: #0f1e31;
 }
 
 .parallax-section {
