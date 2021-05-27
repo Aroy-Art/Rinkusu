@@ -4,32 +4,35 @@
         <div class="row wow fadeInUp" data-wow-duration="500ms">
             <div class="col-xl-12">
                 
-                {{ "<!-- Social Links -->" | safeHTML }}
-                <div class="social-icon">
-                    <ul class="list-inline">
-                        {{ range site.Params.social }}
-                        <li class="list-inline-item">
-                            <a href="{{ .link | safeHTML }}">
-                                <i class="{{ .icon }}">
-                                {{ if .img }}
-                                    <img class="social-icon social-icon-img" src="{{ .img }}">
-                                {{ end }}
-                                </i>
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </div>
-                
-                {{ if  site.Params.sketchfab.enable }}
-                {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
-                <div class="text-center">
-                    <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
-                    <a href="{{ site.Params.sketchfab.link | safeHTML }}">
-                        <img class="social-icon-img" src="{{ site.Params.sketchfab.img }}"> 
-                    </a>
+                <div class="row">
+                    {{ "<!-- Social Links -->" | safeHTML }}
+                    <div class="social-icon col text-center">
+                        <h2> Soical Media</h2>
+                        <ul class="list-inline">
+                            {{ range site.Params.social }}
+                            <li class="list-inline-item">
+                                <a href="{{ .link | safeHTML }}">
+                                    <i class="{{ .icon }}">
+                                    {{ if .img }}
+                                        <img class="social-icon social-icon-img" src="{{ .img }}">
+                                    {{ end }}
+                                    </i>
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
                     </div>
-                {{ end }}
+
+                    {{ if  site.Params.sketchfab.enable }}
+                    {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
+                    <div class="social-icon text-center col">
+                        <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
+                        <a href="{{ site.Params.sketchfab.link | safeHTML }}">
+                            <img class="social-icon-img" src="{{ site.Params.sketchfab.img | safeURL }}"> 
+                        </a>
+                        </div>
+                    {{ end }}
+                </div>
 
                 {{ "<!-- Copyright -->" | safeHTML }}
                 <div class="copyright text-center">
