@@ -847,6 +847,125 @@ a:hover {
 
 
 /*==================================================================
+    Portfolio section
+==================================================================*/
+.portfolio-filter {
+    margin-bottom: 40px;
+    text-align: center;
+} 
+
+.portfolio-filter .btn {
+    outline: 0;
+    border: 1px solid rgba(236, 236, 241, 0.07);
+    background: transparent;
+    display: inline-block;
+    font-size: 16px;
+    padding: 6px 20px;
+    font-weight: 700;
+    color: #bad8dd;
+    transition: .3s all;
+}
+
+.portfolio-filter .btn.active {
+    border-color: #57cbcc;
+}
+
+.portfolio-block {
+    position: relative;
+}
+
+.portfolio-block:before {
+    transition:  all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.226);
+    opacity: 0;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    position: absolute;
+    content: '';
+}
+
+.portfolio-block img {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-block:hover:before {
+    opacity: 1;
+}
+
+.portfolio-block:hover .caption h4{
+    top: 45%;
+}
+
+.portfolio-block:hover .caption {
+    opacity: 1;
+    top: 55%;
+}
+
+.portfolio-block .caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.portfolio-block .caption h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.portfolio-block .caption h4 a {
+    color: #555;
+}
+
+.portfolio-block .caption p {
+    color: #666;
+}
+
+.portfolio-block .caption .search-icon {
+    background: #57cbcc;
+    width: 50px;
+    height: 50px;
+    color: rgba(255, 255, 255, 0.199);
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+.portfolio-block .caption .search-icon i {
+    line-height: 50px;
+}
+
+.portfolio-category {
+    background: #0f1e31;
+    size: 80%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+}
+
+.portfolio-category-title {
+    border-radius: 16px;
+    margin-top: 8px;
+    margin-left: -8px;
+    margin-bottom: 8px;
+    margin-right: -8px;
+}
+
+
+/*==================================================================
+    Comments 
+==================================================================*/
+
+
+/*==================================================================
     Cookie Box 
 ==================================================================*/
 .cookie-box {
