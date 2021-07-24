@@ -1192,7 +1192,7 @@ a:hover {
     background: #0f1e31;
     transition: all .75s cubic-bezier(.19, 1, .22, 1);
     color: #fdfdfd;
-    z-index: 10000;
+    z-index: 9999;
 }
   
 .cookie-box-hide {
