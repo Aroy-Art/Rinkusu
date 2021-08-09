@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+{{ $data := index site.Data }}
+
+{{ if $data.portfolio.portfolio.enable }}
+{{ with $data.portfolio.portfolio }}
+{{"<!-- Portfolio Section -->" | safeHTML}}
+<section class="portfolio section" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                {{"<!-- Title -->" | safeHTML}}
+                <div class="title text-center">
+                    <h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+						{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+                    <div class="border-biotech"></div>
+                </div>
+                {{"<!-- /Title -->" | safeHTML}}
+            </div>
+        </div>
+        {{ range .portfolio_categories }}
+        {{ $text_color := .text_color}}
+        <div class="row portfolio-category">
+            
+            <div class="col-12">
+                {{"<!-- Section Title -->" | safeHTML}}
+                <div class="title text-center">
+                    <h2 class="portfolio-category-title" style="background-color: {{ .bg_color}};">
+                        {{ with .name }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span style="color: {{ $text_color }};">
+                        {{ with .name }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+                    <div class="border-biotech"></div>
+                </div>
+                {{"<!-- /Section Title -->" | safeHTML}}
+            </div>
+
+            <div class="masonry-wrapper">
+                <div class="masonry">
+                    {{ $category := .name }}
+                    {{ range .portfolio_items }}
+                        <a class="masonry-item" href="{{ .image | absURL }}" data-lightbox="{{ $category }}" data-title="{{ .name }}">                            
+                            <img src="{{ .image_thumb | absURL }}" alt="" class="masonry-content">
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    <script src="//unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+</section>
+{{"<!-- /Portfolio Section -->" | safeHTML}}    
+{{ end }}
+{{ end }}
+
+{{ end }}
