@@ -729,6 +729,37 @@ a:hover {
 
 
 /*=================================================================
+    Banner 2
+=================================================================*/
+.backgroundContainer {
+    background-color: #040b1e;
+    position: fixed;
+    top: 0;
+    border: 0;
+    left: 0;
+    right: 0;
+}
+
+img.loaded video.loaded {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+}
+
+.hero-video {
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -9;
+    width: auto;
+    height: auto;
+    position: absolute;
+    /*top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);*/
+}
+
+
+/*=================================================================
     Footer
 =================================================================*/
 .social-icon {
