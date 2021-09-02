@@ -9,6 +9,9 @@
     <meta name="author" content="{{ . }}">
     {{ end }}
     {{ hugo.Generator }}
+    {{ if site.Params.themeColor }}
+    <meta name="theme-color" content="{{ site.Params.themeColor }}">
+    {{ end }}
 
     {{ "<!-- Plugins -->" | safeHTML }}
     {{ range site.Params.plugins.css }}
