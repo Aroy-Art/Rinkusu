@@ -6,6 +6,14 @@ $(window).on('load', function () {
 	$('.preloader').fadeOut(100);
 });
 
+/* ========================================================================= */
+/*	Image Preloader
+/* ========================================================================= */
+function imgIsLoaded(imgElement) {
+	$(imgElement).addClass("loaded");
+	$(imgElement).removeClass("unloaded");
+}
+
 jQuery(function ($) {
 	"use strict";
 
