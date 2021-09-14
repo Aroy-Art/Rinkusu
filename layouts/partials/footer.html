@@ -51,10 +51,6 @@
 </footer>
 {{ "<!-- /Footer -->" | safeHTML }}
 
-{{ "<!-- Main Script --> " | safeHTML }}
-{{ $script := resources.Get "js/script.js" | minify | fingerprint "sha384" }}
-<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
-
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range site.Params.plugins.js }}
 <script src="{{ .link | absURL }}"></script>
