@@ -65,6 +65,10 @@
 <script src="{{ site.Params.map.gmap_api | safeURL }}"></script>
 {{ end }}
 
+{{ "<!-- Main Script --> " | safeHTML }}
+{{ $script := resources.Get "js/script.js" | minify | fingerprint "sha384" }}
+<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+
 {{ if site.Params.cookies.enable }}
 {{ "<!-- Cookie Box -->" | safeHTML }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
