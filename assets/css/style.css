@@ -61,13 +61,14 @@ pre {
 =================================================================*/
 ::-moz-selection {
     /* Firefox Code */
-    color: #fff;
-    background: #57cbcc;
+    color: #57cbcc;
+    background: #750cf2;
 }
 
 ::selection {
-    color: #fff;
-    background: #57cbcc;
+    color: #57cbcc;
+    font-weight: bold;
+    background: #750cf2;
 }
 
 hr {
