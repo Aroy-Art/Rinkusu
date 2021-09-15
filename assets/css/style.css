@@ -267,30 +267,6 @@ table, th {
     box-shadow: none;
 }
 
-figure {
-    margin: 0;
-}
-
-a {
-    transition: all .2s ease-in 0s;
-}
-
-iframe {
-    border: 0;
-}
-
-a,
-a:focus,
-a:hover {
-    text-decoration: none;
-    outline: 0;
-}
-
-a:focus,
-a:hover {
-    color: #57cbcc;
-}
-
 .btn-main {
     background: #57cbcc;
     color: #fff;
