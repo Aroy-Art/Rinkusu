@@ -470,6 +470,7 @@ table, th {
     margin-bottom: 8px;
     font-size: 20px;
     font-weight: 700;
+    font-family: "BlackOpsOne", sans-serif;
 }
 
 .navbar-dark .navbar-nav .active>.nav-link,
