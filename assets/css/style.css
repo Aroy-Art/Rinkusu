@@ -2,6 +2,11 @@
 Template Name: BioTech
 Author: Aroy
 =================================================================*/
+@font-face {
+    font-family: "BlackOpsOne";
+    src: url(/fonts/BlackOpsOne-Regular.ttf);
+}
+
 html {
     background-color: #0f1e31;
     color: #bad8dd;
@@ -38,8 +43,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 400;
-    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: 500;
+    font-family: "BlackOpsOne", sans-serif;
     color: #afbac4;
 }
 
