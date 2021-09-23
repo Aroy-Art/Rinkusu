@@ -400,6 +400,15 @@ table, th {
     bottom: 0;
 }
 
+.breadcrumb {
+    background-color: #0f1e31;
+}
+
+nav[aria-label="breadcrumb"] li:last-child a{
+    color: #57cbcc;
+    cursor: default;
+}
+
 .header-bradcrumb {
     background: transparent;
 }
