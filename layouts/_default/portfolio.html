@@ -2,6 +2,8 @@
 
 {{ partial "navigation.html" . }}
 
+{{ partial "bradcrumb.html" . }}
+
 {{ $data := index site.Data }}
 
 {{ if $data.portfolio.portfolio.enable }}
