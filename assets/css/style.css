@@ -498,6 +498,22 @@ nav[aria-label="breadcrumb"] li:last-child a{
     outline: 0;
 }
 
+.dropdown-menu {
+    color: #fff;
+    background-color: #040b1e;
+    border: 1px solid #57cbcc;
+}   
+
+.dropdown-item {
+    color: rgba(255,255,255,.75);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #f8f9fa;
+    text-decoration: none;
+    background-color: #0f1e31;
+}
+
 .bg-1 {
     background-repeat: no-repeat;
     background-size: cover;
