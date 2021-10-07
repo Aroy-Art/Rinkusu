@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="{{ .link | absURL }}">
     {{ end }}
 
+    {{ "<!-- Codeblocks Stylesheet -->" | safeHTML }}
+    {{ $style := resources.Get "css/syntax.css" | minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" media="screen">
+
     {{ "<!-- Main Stylesheet -->" | safeHTML }}
     {{ $styles := resources.Get "css/style.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
@@ -25,10 +29,6 @@
     {{ "<!-- Custom Stylesheet -->" | safeHTML }}
 	{{ $custom := resources.Get "css/custom.css" | minify }}
     <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
-
-    {{ "<!-- Codeblocks Stylesheet -->" | safeHTML }}
-    {{ $style := resources.Get "css/syntax.css" | minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" media="screen">
 
     {{ "<!--Favicon-->" | safeHTML }}
     <link rel="shortcut icon" href="{{ `/img/favicon.png` | absURL }}" type="image/x-icon">
