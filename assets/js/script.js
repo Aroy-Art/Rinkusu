@@ -15,6 +15,9 @@ function imgIsLoaded(imgElement) {
 }
 
 
+/* ========================================================================= */
+/*	Code Copy Button
+/* ========================================================================= */
 function createCopyButton(highlightDiv) {
 	const button = document.createElement("button");
 	button.className = "copy-code-button";
