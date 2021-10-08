@@ -90,11 +90,11 @@ iframe {
 
 a {
     color: #c910c9;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
     transition: all .3s ease-in 0s;
-}
-
-iframe {
-    border: 0;
 }
 
 a,
@@ -106,7 +106,8 @@ a:hover {
 
 a:focus,
 a:hover {
-    color: #c910c9;
+    color: #57cbcc;
+    background-size: 100% 2px;
 }
 
 table {
