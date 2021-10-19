@@ -41,8 +41,11 @@
                 <div class="masonry">
                     {{ $category := .name }}
                     {{ range .portfolio_items }}
-                        <a class="masonry-item" href="{{ .image | absURL }}" data-lightbox="{{ $category }}" data-title="{{ .name }}">                            
-                            <img src="{{ .image_thumb | absURL }}" alt="" class="masonry-content">
+                        {{- $original := resources.Get .image -}}
+                        {{ $thumb := $original.Fit "512x512" }}
+                        {{ $image := $original.Fit "1080x1080" }}
+                        <a class="masonry-item" href="{{ $image.RelPermalink }}" data-lightbox="{{ $category }}" data-title="{{ .name }}">                            
+                            <img src="{{ $thumb.RelPermalink }}" alt="" class="masonry-content">
                         </a>
                     {{ end }}
                 </div>
