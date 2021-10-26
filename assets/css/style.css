@@ -748,6 +748,7 @@ pre.chroma {
 =================================================================*/
 .hero-area {
     background-size: cover;
+    background-position: bottom left;
     height: 100vh;
     position: relative;
     display: flex;
