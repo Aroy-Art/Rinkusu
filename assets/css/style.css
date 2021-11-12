@@ -744,6 +744,41 @@ pre.chroma {
 
 
 /*=================================================================
+    To Top Button
+=================================================================*/
+#content {
+    position: relative;
+}
+
+#topPerent {
+    position: absolute;
+	height: calc(100% - 120vh);
+    top: 150vh;
+	right: 0px;
+	width: 65px;
+	background-color: #0000;
+}
+
+#top {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 92vh;
+    background-color: #0cbcf2;
+    box-shadow: 2px 2px 2px black;
+    padding: 5px 5px 16px 5px;
+    border: 1px solid #6bffec;
+    border-radius: 50%;
+    font-size: 28px;
+    display: inline-block;
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    z-index: 5;
+    
+}
+
+
+/*=================================================================
     Banner
 =================================================================*/
 .hero-area {
