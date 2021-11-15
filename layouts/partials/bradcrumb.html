@@ -1,3 +1,4 @@
+{{ if site.Params.breadcrumbs }}
 {{"<!-- Bradcrumb Section -->" | safeHTML}}
 {{ $siteUrl := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
 {{ $.Scratch.Add "sitePath" .Site.BaseURL }}
@@ -24,3 +25,4 @@
     </div>
 </nav>
 {{"<!-- /Bradcrumb Section -->" | safeHTML}}
+{{ end }}
