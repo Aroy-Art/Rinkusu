@@ -580,6 +580,25 @@ pre.chroma {
     opacity: .01;
 }
   
+/*=================================================================
+    Tags
+=================================================================*/
+.tagContainer{
+    margin: 16px
+}
+
+
+.tags {
+    margin: 16px 0 0 0;
+    background-color: #00fff9;
+    border-radius: 8px;
+    padding: 0.2em;
+}
+
+.tags:hover {
+    background-color: #046293;
+}
+
 
 /*=================================================================
     Navigation
