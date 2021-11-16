@@ -1,0 +1,39 @@
+{{ $data := index site.Data.portfolio }}
+
+{{ with $data.portfolio }}
+<section class="section bg-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                {{"<!-- Start Section Title -->" | safeHTML}}
+                <div class="title text-center wow fadeInDown">
+                    <h2> {{ with i18n "artTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+                         {{ with i18n "artTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
+                    <div class="border-BioTech"></div>
+                </div>
+                {{"<!-- End Section Title -->" | safeHTML}}
+
+                <div id="ArtCarousel" class="wow fadeInUp center-block" data-wow-duration="500ms" data-wow-delay="100ms">
+                    {{ $images := slice }}
+                    {{ $image_thumb := slice }}
+                    {{ range .portfolio_categories }}
+                        {{ range .portfolio_items }}
+                        {{ $images = $images | append .image }}
+                        {{ $image_thumb := $image_thumb | append .image_thumb }}
+
+                        {{- $original := resources.Get .image -}}
+                        {{ $thumb := $original.Resize "x320" }}
+                        <div class="item item-center">
+                                <img class="img-fluid lozad AC-img" data-lazy="{{ $thumb.RelPermalink }}" alt="{{ .name }}" title="{{ .name }}">
+                        </div>
+                        {{ end }}
+                    {{ end }}
+                </div>
+                <div class="all-post text-center col-lg-12">
+                    <a class="btn btn-main" href="{{ `portfolio` | absLangURL }}">{{ "view More Art" }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
