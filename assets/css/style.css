@@ -1462,6 +1462,25 @@ img.loaded video.loaded {
   filter: drop-shadow(0px 5px 5px rgba(0, 56, 56, 0.774));
 }
 
+/*==================================================================
+    Art Carousel
+==================================================================*/
+#ArtCarousel{
+    background-color: #0f1e31;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.item img {
+    padding: 0 4px;
+    border-radius: 10px;
+}
+
+.item-center {
+    display: flex;
+    justify-content: center;
+}
+
 
 /*==================================================================
     Social sharing buttons from Sharingbuttons.io
