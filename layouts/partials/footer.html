@@ -27,10 +27,10 @@
                     {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
                     <div class="social-icon text-center col">
                         <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
-                        <a href="{{ site.Params.sketchfab.link | safeHTML }}">
+                        <a href="{{ site.Params.sketchfab.link | safeHTML }}" class="social-icon-a">
                             <img class="social-icon-img" src="{{ site.Params.sketchfab.img | absURL }}"> 
                         </a>
-                        </div>
+                    </div>
                     {{ end }}
                 </div>
                 

@@ -1233,6 +1233,9 @@ img.loaded video.loaded {
 .social-icon-img:hover {
     opacity: 60%;
 }
+.social-icon-a{
+    padding-bottom: 16px;
+}
 
 .copyright {
     padding: 20px 0;
