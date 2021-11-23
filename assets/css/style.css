@@ -32,7 +32,7 @@ html:not([hide-scrollbar]) ::-webkit-scrollbar {
 
 body {
     background-color: #040b1e;
-    font-family: "Anaheim", sans-serif;
+    font-family: "Roboto Mono", sans-serif;
     color: #bad8dd;
     -webkit-font-smoothing: antialiased;
 }
