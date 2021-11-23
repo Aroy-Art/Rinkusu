@@ -110,6 +110,20 @@ a:hover {
     background-size: 100% 2px;
 }
 
+blockquote {
+    display: block;
+    padding: 3px 2px 3px 3px;
+    margin: 0;
+    font-family: amiri,times new roman,georgia,serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    position: relative;
+    background-color: #046293;
+    border-width: .1rem .1rem .1rem .25rem;
+    border-radius: 0 5px 0 5px;
+    border-style: solid;
+}
+
 table {
     border: 1px solid #750cf2;
     border-collapse: collapse;
