@@ -43,6 +43,10 @@
                     </a>
                     <br>
                     <p>{{ site.Params.copyright | markdownify }}</p>
+                    {{ if site.Params.license }}
+                    <p class="license">{{ site.Params.license | markdownify }}</p>    
+                    {{ end }}
+                    
                 </div>
 
             </div>

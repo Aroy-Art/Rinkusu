@@ -1264,6 +1264,11 @@ img.loaded video.loaded {
     margin-top: 10px;
 }
 
+.license {
+    color: #7a7a7a;
+    font-size: 0.9rem;
+}
+
 #scrollUp {
     border: 1px solid #4e595f;
     bottom: 15px;
