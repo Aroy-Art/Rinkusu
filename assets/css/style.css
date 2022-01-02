@@ -606,10 +606,10 @@ pre.chroma {
     margin: 16px
 }
 
-
 .tags {
-    margin: 16px 0 0 0;
-    background-color: #00fff9;
+    display: inline-block;
+    margin: 4px 0 4px 0;
+    background-color: #00eeff;
     border-radius: 8px;
     padding: 0.2em;
 }
