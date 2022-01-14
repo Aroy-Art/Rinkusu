@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+{{ partial "bradcrumb.html" . }}
+
+{{"<!-- Tags Section -->" | safeHTML }}
+<section id="blog" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{"<!-- Section Title -->" | safeHTML }}
+                <dir class="title text-center wow fadeInDown">
+                    <h2>{{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+                        {{ with i18n "blogTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }}</span></h2>
+                        <div class="border-BioTech"></div>
+                </dir>
+            </div>
+            {{ partial "tagcloud.html" . }}
+            
+            {{ $main := eq .Path "tags"}}
+            {{ if not $main }}
+            {{"<!-- Section Title -->" | safeHTML }}
+            {{ $paginator := .Paginate .Data.Pages}}
+            {{ range $paginator.Pages }}
+            {{ .Render "article" }}
+            {{ end }}
+            <div class="col-12">
+                {{ template "_internal/pagination.html" . }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{"<!-- /Tags Section -->" | safeHTML }}
+
+{{ end }}
