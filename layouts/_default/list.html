@@ -16,6 +16,9 @@
                         <div class="border-BioTech"></div>
                 </dir>
             </div>
+
+            {{ partial "tagcloud.html" . }}
+
             {{"<!-- Section Title -->" | safeHTML }}
             {{ $paginator := .Paginate .Data.Pages}}
             {{ range $paginator.Pages }}
