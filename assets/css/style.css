@@ -619,6 +619,11 @@ pre.chroma {
     background-color: #046293;
 }
 
+.tagcloud {
+    text-align: center;
+    margin: 20px 0px 80px;
+}
+
 
 /*=================================================================
     Navigation
