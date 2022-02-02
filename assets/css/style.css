@@ -12,6 +12,7 @@ html {
     color: #bad8dd;
     scrollbar-color: #ff00d4 #040b1e;
     scrollbar-width: thin;
+    scroll-behavior: smooth;
 }
 
 html:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
