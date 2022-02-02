@@ -3,6 +3,8 @@
         <div class="media-wrapper">
             <img class="img-fluid lozad" src="{{ .Params.Image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .Params.image | absURL }}'">
         </div>
+        
+        {{ partial "get_tags.html" . }}
 
         <div class="content">
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
