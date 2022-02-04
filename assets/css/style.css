@@ -1521,6 +1521,7 @@ img.loaded video.loaded {
     color: #57cbcc;
     border: solid 5px;
     transition: border-color .5s ease-in-out,box-shadow .15s ease-in-out;
+    margin: 4px;
 }
 
 .form-control:focus {
