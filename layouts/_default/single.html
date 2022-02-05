@@ -15,6 +15,9 @@
                     <li class="list-inline-item">Last Modified: {{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
                 </ul>
             <img class="img-fluid mb-50 lozad" src="{{ .Params.Image | absURL }}" alt="blog-image">
+
+            {{ partial "get_tags.html" . }}
+
         </div>
             <div class="col-lg-8 offset-lg-2">
             <div class="post-single-content">
