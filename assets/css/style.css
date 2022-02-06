@@ -1528,6 +1528,9 @@ img.loaded video.loaded {
     border-color: #FF00BA;
 }
 
+.h-captcha {
+    margin: 4px 0;
+}
 
 /*==================================================================
     Social sharing buttons from Sharingbuttons.io
