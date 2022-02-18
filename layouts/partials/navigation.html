@@ -10,12 +10,12 @@
                 {{ end }}
             </a>
 
-            <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
                 
-            <div class="collapse navbar-collapse" id="navigation">
-                <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                <ul class="navbar-nav">
                     {{ range site.Menus.main }}
                     <li class="nav-item">
                         <a class="nav-link" href="{{if .Pre}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.Pre}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
@@ -24,12 +24,14 @@
 
                     {{ if site.Menus.more }}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                             {{ range site.Menus.more }}
                             <a class="dropdown-item" href="{{if .Pre}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.Pre}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
                             {{ end }}
-                        </div>
+                        </ul>
                     </li>   
                     {{ end }}
                 </ul>
