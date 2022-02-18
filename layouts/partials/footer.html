@@ -6,7 +6,7 @@
                 
                 <div class="row">
                     {{ "<!-- Social Links -->" | safeHTML }}
-                    <div class="social-icon col text-center">
+                    <div class="social-icon text-center col-sm">
                         <h2> Social Media</h2>
                         <ul class="list-inline">
                             {{ range site.Params.social }}
@@ -25,7 +25,7 @@
 
                     {{ if  site.Params.sketchfab.enable }}
                     {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
-                    <div class="social-icon text-center col">
+                    <div class="social-icon text-center col-sm">
                         <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
                         <a href="{{ site.Params.sketchfab.link | safeHTML }}" class="social-icon-a">
                             <img class="social-icon-img" src="{{ site.Params.sketchfab.img | absURL }}"> 
