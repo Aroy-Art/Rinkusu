@@ -1,0 +1,69 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+{{ partial "bradcrumb.html" . }}
+
+{{ $data := index site.Data.about }}
+
+{{"<!-- About Section -->" | safeHTML}}
+
+{{ with $data.about }}
+<section class="section bg-two">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title text-center wow fadeInDown">
+                    <h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+                        {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+                    <div class="border-biotech"></div>
+                    <p class="margin-top-20">{{ .subtitle }}</p>
+                </div>
+            </div>    
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+    {{ range .sections  }}
+        {{- $align := .align}}
+        {{- $original := resources.Get .image -}}
+        {{ $image := $original.Fit "512x512" }}
+        <div class="row align-items-center text-center">
+            <div class="col-md-4 
+        {{- if eq $align "left" -}}
+            {{- printf " justify-content-start order-first" -}}
+        {{- else if eq $align "right" -}}
+            {{- printf " justify-content-start order-last" -}}
+        {{- else -}}
+            {{- printf " justify-content-end" -}}
+        {{- end -}}">
+                <img src="{{ $image.RelPermalink }}" class="img-fluid" alt="...">
+            </div>
+
+            <div class="col-md-8">
+                <h1 class="mb-20">
+                    {{ .title }}
+                </h1>
+
+                <h5 class="mb-20">
+                    {{ .subtitle }}
+                </h5>
+
+                <p class="mb-20">
+                    {{ .content }}
+                </p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ end }}
+
+{{"<!-- /About Section -->" | safeHTML}}
+
+{{ partial "site_statics.html" . }}
+
+{{ end }}
