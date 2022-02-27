@@ -11,8 +11,8 @@
                 <h1>{{ .Title }}</h1>
                 <ul class="list-inline mb-50">
                     <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.Author }}</a></li>
-                    <li class="list-inline-item">Published Date: {{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
-                    <li class="list-inline-item">Last Modified: {{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
+                    <li class="list-inline-item">Published Date: {{ with site.Params.dateFormat | default "2006-01-02" | .Date.Format }} {{ . }} {{ end }}</li>
+                    <li class="list-inline-item">Last Modified: {{ with site.Params.dateFormat | default "2006-01-02" | .Lastmod.Format }} {{ . }} {{ end }}</li>
                 </ul>
             <img class="img-fluid mb-50 lozad" src="{{ .Params.Image | absURL }}" alt="blog-image">
 
