@@ -1,0 +1,39 @@
+{{ $data := index site.Data.siteStatics.siteStatics }}
+
+{{ if $data.enable }}
+    
+{{"<!-- Site Statics Section -->" | safeHTML}}
+<section class="section bg-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title text-center wow fadeInDown">
+                    <h1 class="">{{ $data.title }}</h1>
+                    <p>{{ $data }}</p>
+                </div>
+            </div>
+            
+            <div class="col-12 text-center">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Last build date:</td>
+                            <td>{{ now.Format "2006-01-02"}}</td>
+                        </tr>
+                        {{ if data }}
+                            
+                        {{ end }}
+                        <tr>
+                            <td>Number of pages:</td>
+                            <td>{{ len .Site.RegularPages }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{{"<!-- /Site Statics Section -->" | safeHTML}}
+
+{{ end }}
+
