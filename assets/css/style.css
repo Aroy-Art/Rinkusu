@@ -111,6 +111,11 @@ a:hover {
     background-size: 100% 2px;
 }
 
+p img {
+    width: 100%;
+    height: auto;
+}
+
 blockquote {
     display: block;
     padding: 3px 2px 3px 3px;
