@@ -145,6 +145,10 @@ table, th {
     border: 1px solid #750cf2;
 }
 
+.hidden {
+    display: none;
+}
+
 .kill-margin-bottom {
     margin-bottom: 0 !important;
 }
