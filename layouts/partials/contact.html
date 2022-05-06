@@ -21,11 +21,11 @@
         <form name="contact" method="post" action="{{ .action }}" data-netlify="{{ .netlify }}">
             <h3 class="text-center">{{ .content }}</h3>
             <div class="row">
-                <div class="d-flex flex-column col-md-4 {{/*  justify-content-between  */}}">
+                <div class="d-flex flex-column col-md-4 justify-content-between">
                     <input name="bot-field" class="form-crontrol hidden" />
                     <input id="contact-form-name" type="text" name="Name" class="form-control" placeholder="{{ .name }}" value="" required="true" autocomplete="off" />
                     <input id="contact-form-email" type="email" name="Email" class="form-control" placeholder="{{ .email }}" value="" required="true" autocomplete="off" />
-                    {{/*  <input id="contact-form-subject" type="text" name="Subject" class="form-control" placeholder="{{ .subject }}" value="" required="true" autocomplete="off"/>  */}}
+                    <input id="contact-form-subject" type="text" name="Subject" class="form-control" placeholder="{{ .subject }}" value="" required="true" autocomplete="off"/>
                 </div>
                 <div class="d-flex flex-column col-md-8">
                     <textarea id="contact-form-message" class="form-control" placeholder="{{ .message }}" required="true" rows="6"></textarea>
