@@ -131,18 +131,27 @@ blockquote {
 }
 
 table {
+    width: 100%;
     border: 1px solid #750cf2;
     border-collapse: collapse;
-    background-color: #0f1e31;
+}
+
+table, tr:nth-of-type(odd) {
+    background: #020120;
 }
 
 table, td {
-    border: 1px solid #750cf2;
-    padding: 10px;
+    border-width: 0 1px 0 1px;
+    border-style: dashed;
 }
 
 table, th {
     border: 1px solid #750cf2;
+    background: #040b2e;
+}
+
+table, td, th {
+    padding: 6px; 
 }
 
 .hidden {
