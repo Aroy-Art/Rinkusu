@@ -1,0 +1,115 @@
+<section id="contact" class="fragment">
+    <div class="container-fluid bg-dark">
+        <div class="container py-5">
+
+            <div class="title-container row mx-0">
+                <div class="title col px-0 text-center text-body">
+                    <h2>Contact Me</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <form class='contact position-relative' data-has-formspree='true' data-has-netlify='true' id='defaultContact' method='POST' name='defaultContact'>
+                        <input type='hidden' name='form-name' value='defaultContact' />
+                            <div class="row py-3 should-fade">
+                                <div class="d-flex flex-column col-md-4 justify-content-between">
+                                    <div class="form-group">
+                                        <input
+                                            id="name"
+                                            name="name"
+                                            class="form-control"
+                                            type="text"
+                                            data-validation
+                                            data-validation-error-msg="Please enter your name"
+                                            placeholder="Your Name *"
+                                            required>
+                                        <div class="px-2" data-error id="name-error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input
+                                            id="email"
+                                            name="email"
+                                            class="form-control"
+                                            type="text"
+                                            data-validation="email"
+                                            data-validation-error-msg="Please enter your email address"
+                                            placeholder="Your Email *"
+                                            required>
+                                        <div class="px-2" data-error id="email-error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input
+                                            id="subject"
+                                            name="subject"
+                                            class="form-control"
+                                            type="text"
+                                            data-validation
+                                            data-validation-error-msg="Please enter the subject"
+                                            placeholder="Subject *">
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column col-md-8">
+                                    <div class="form-group">
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            class="form-control"
+                                            type="text"
+                                            data-validation
+                                            data-validation-error-msg="Send Message"
+                                            placeholder="Your Message *"
+                                            rows="6"
+                                            required></textarea>
+                                        <div class="px-2" data-error id="message-error"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <div class="captcha-error alert alert-danger d-none" id="captcha-error">
+                                        Message could not be send due to captcha not loadable. Please contact us at mail@example.com.
+                                    </div>
+                                    <div class="generic-error alert alert-danger d-none" id="generic-error">
+                                        Message could not be send. Please contact us at mail@example.com.
+                                    </div>
+                                    <noscript>
+                                        <div class="alert alert-danger py-2" id="js-error">
+                                            Message can not be send with javascript disabled. Please contact us at mail@example.com.
+                                        </div>
+                                    </noscript>
+                                    {{/*  <div>
+                                        <script src='https://www.google.com/recaptcha/api.js'></script>
+                                        <div class='g-recaptcha' data-sitekey='6LdAvUIUAAAAAHjrjmjtNTcXyKm0WKwefLp-dQv9'></div>
+                                        <noscript>
+                                            <div>
+                                                <div style="width: 302px; height: 422px; position: relative;">
+                                                    <div style="width: 302px; height: 422px; position: absolute;">
+                                                        <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LdAvUIUAAAAAHjrjmjtNTcXyKm0WKwefLp-dQv9" frameborder="0" scrolling="no"
+                                                            style="width: 302px; height:422px; border-style: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                                <div style="width: 300px; height: 60px; border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                                                    <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                                                        style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;" >
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </noscript>
+                                    </div>  */}}
+                                    <button
+                                        class="btn submit-btn btn-primary"
+                                        type="submit">Send Message
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="hidden" name="page" value="/"/>
+                            <input type="hidden" name="someID" value="example.com"/><div class="generic-success mb-0 mb-3 hidden" id="generic-success">
+                            <div class="alert alert-success">Thank you for contacting us</div>
+                            <span class="btn btn-primary" data-action="return-form">Return</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
