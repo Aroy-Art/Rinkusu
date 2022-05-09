@@ -141,7 +141,7 @@ jQuery(function ($) {
 		autoplaySpeed: 1500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		lazyLoad: "progressive",
+		lazyLoad: 'progressive',
 		centerMode: true,
   		variableWidth: true
 	});
