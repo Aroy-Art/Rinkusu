@@ -2,6 +2,12 @@
 Template Name: BioTech - Dark
 Author: Aroy
 =================================================================*/
+:root {
+    --text-light: #bad8dd;
+    --text-darker: #000;
+}
+
+
 @font-face {
     font-family: "BlackOpsOne";
     src: url(/fonts/BlackOpsOne-Regular.ttf);
@@ -9,7 +15,7 @@ Author: Aroy
 
 html {
     background-color: #0f1e31;
-    color: #bad8dd;
+    color: var(--text-light, #bad8dd);
     scrollbar-color: #ff00d4 #040b1e;
     scrollbar-width: thin;
     scroll-behavior: smooth;
@@ -34,7 +40,7 @@ html:not([hide-scrollbar]) ::-webkit-scrollbar {
 body {
     background-color: #040b1e;
     font-family: "Roboto Mono", sans-serif;
-    color: #bad8dd;
+    color: var(--text-light, #bad8dd);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -516,6 +522,11 @@ nav[aria-label="breadcrumb"] li:last-child a{
 }
 
 /*=================================================================
+    Shortcodes
+=================================================================*/
+
+
+/*=================================================================
     Code Blocks
 =================================================================*/
 
@@ -958,11 +969,11 @@ pre.chroma {
     right: 0;
 }
 
-img.loaded video.loaded {
+/*img.loaded video.loaded {
     opacity: 1;
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
-}
+}*/
 
 .hero-video {
     min-width: 100%;
@@ -975,6 +986,13 @@ img.loaded video.loaded {
     left: 50%;
     transform: translate(-50%,-50%);*/
 }
+
+/*=================================================================
+    About Page
+=================================================================*/
+/* .about-header {
+    
+} */
 
 
 /*=================================================================
@@ -1513,6 +1531,11 @@ img.loaded video.loaded {
   filter: drop-shadow(0px 5px 5px rgba(0, 56, 56, 0.774));
 }
 
+.lb-container {
+    background-color: #53606c;
+}
+
+
 /*==================================================================
     Art Carousel
 ==================================================================*/
@@ -1541,10 +1564,6 @@ img.loaded video.loaded {
     transition: border-color .5s ease-in-out,box-shadow .15s ease-in-out;
     margin: 4px;
     resize: none
-}
-
-#contact-form-massage {
-    resize: none;
 }
 
 .form-control:focus {
@@ -1842,6 +1861,7 @@ img.loaded video.loaded {
     transition: all .75s cubic-bezier(.19, 1, .22, 1);
     color: #fdfdfd;
     z-index: 9999;
+    border-top: 2px solid #fd21ef;
 }
   
 .cookie-box-hide {
