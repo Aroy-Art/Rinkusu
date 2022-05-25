@@ -136,7 +136,7 @@ blockquote {
     border-style: solid;
 }
 
-code {
+code:not(pre.chroma>code) {
     font-size: .875em;
     color: #d63384;
     word-wrap: break-word;
@@ -144,7 +144,6 @@ code {
     padding: 2px;
     border: #14171c 2px solid;
     border-radius: 8px;
-    font-size: 18px;
 }
 
 table {
@@ -160,6 +159,7 @@ table, tr:nth-of-type(odd) {
 table, td {
     border-width: 0 1px 0 1px;
     border-style: dashed;
+    font-size: 16px;
 }
 
 table, th {
