@@ -136,12 +136,12 @@ jQuery(function ($) {
 
 	$("#ArtCarousel").slick({
 		infinite: true,
-		arrows: false,
+		arrows:	false,
 		autoplay: true,
 		autoplaySpeed: 1500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		lazyLoad: 'progressive',
+		lazyLoad: 'ondemand',//'progressive',
 		centerMode: true,
   		variableWidth: true
 	});
