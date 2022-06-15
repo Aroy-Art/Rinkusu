@@ -7,6 +7,13 @@ $(window).on('load', function () {
 });
 
 /* ========================================================================= */
+/*	lazy load initialize
+/* ========================================================================= */
+const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+observer.observe();
+
+
+/* ========================================================================= */
 /*	Image Preloader
 /* ========================================================================= */
 function imgIsLoaded(imgElement) {
