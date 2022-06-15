@@ -1353,12 +1353,13 @@ pre.chroma {
 }
 
 .post-block {
-    background-color: #040b1e;
+    background-color: #0f1e31;
     margin-bottom: 10px;
 }
 
 .post-block .content {
     padding: 20px;
+    word-break: break-word;
 }
 
 .post-block .content h3 {
