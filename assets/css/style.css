@@ -1300,13 +1300,15 @@ pre.chroma {
 
 .social-icon-img {
     padding: 10px;
+    width: 70%;
+    height: auto;
 }
 
 .social-icon-img:hover {
     opacity: 60%;
 }
 .social-icon-a{
-    padding-bottom: 16px;
+    padding-bottom: 24px;
 }
 
 .copyright {

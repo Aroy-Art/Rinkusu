@@ -32,6 +32,16 @@
                         </a>
                     </div>
                     {{ end }}
+
+                    {{ if  site.Params.itchio.enable }}
+                    {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
+                    <div class="social-icon text-center col-sm">
+                        <h2>{{ site.Params.itchio.text | markdownify }}</h2>
+                        <a href="{{ site.Params.itchio.link | safeHTML }}" class="social-icon-a">
+                            <img class="social-icon-img" src="{{ site.Params.itchio.img | absURL }}"> 
+                        </a>
+                    </div>
+                    {{ end }}
                 </div>
                 
                 <div class="border-biotech" style="background: #0f1e31;"></div>
