@@ -1,4 +1,4 @@
-# BioTech
+# Rinkusu
 
 My open source Hugo theme for my portfolio/blog site
 
