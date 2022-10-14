@@ -17,7 +17,7 @@
                 <div class="title text-center">
                     <h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
 						{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
-                    <div class="border-biotech"></div>
+                    <div class="border-Rinkusu"></div>
                 </div>
                 {{"<!-- /Title -->" | safeHTML}}
             </div>
@@ -32,7 +32,7 @@
                     <h2 class="portfolio-category-title" style="background-color: {{ .bg_color}};">
                         {{ with .name }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span style="color: {{ $text_color }};">
                         {{ with .name }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
-                    <div class="border-biotech"></div>
+                    <div class="border-Rinkusu"></div>
                 </div>
                 {{"<!-- /Section Title -->" | safeHTML}}
             </div>

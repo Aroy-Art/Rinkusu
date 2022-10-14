@@ -215,7 +215,7 @@ table, td, th {
     color: #fff;
 }
 
-.border-biotech {
+.border-Rinkusu {
     border-top: 2px solid rgba(236, 239, 241, 0.07);
     height: 1px;
     margin: 15px auto 0;
@@ -223,7 +223,7 @@ table, td, th {
     width: 30%;
 }
 
-.border-biotech:before {
+.border-Rinkusu:before {
     background-color: #fff;
     content: '';
     height: 6px;
