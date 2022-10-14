@@ -1,21 +1,21 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "BioTech"
+name = "Rinkusu"
 license = "MIT"
-licenselink = "https://github.com/Aroy-Art/BioTech/blob/main/LICENSE"
+licenselink = "https://github.com/Aroy-Art/Rinkusu/blob/main/LICENSE"
 description = ""
 homepage = "http://example.com/"
 tags = ["blog"]
 features = ["blog"]
-min_version = "0.41.0"
+min_version = "0.92.0"
 
-[author]
-  name = "Aroy-Art"
-  homepage = ""
+[author] 
+    name = "Aroy-Art"
+    homepage = "https://aroy-art.com"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+    name = ""
+    homepage = ""
+    repo = ""
