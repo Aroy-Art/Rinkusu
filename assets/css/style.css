@@ -1,10 +1,26 @@
 /*=================================================================
-Template Name: BioTech - Dark
-Author: Aroy
+Template Name: Rinkusu - Dark
+Author: Aroy (https://aroy-art.com)
 =================================================================*/
 :root {
     --text-light: #bad8dd;
     --text-darker: #000;
+
+    --glitched-duration: 0.9s;
+    --glitched-long-duration: 3s;
+    --yellow-color: #f9f002;
+    --yellow-color-opacity: #f9f00242;
+    --orange-color: #ff9800;
+    --border-color: #8ae66e;
+    --red-color: #ff003c;
+    --blue-color: #136377;
+    --green-color: #446d44;
+    --purple-color: purple;
+
+    --neon-color: #39ff14;
+    --neon-pink-color: #ff00d4;
+
+
 }
 
 
@@ -19,6 +35,7 @@ html {
     scrollbar-color: #ff00d4 #040b1e;
     scrollbar-width: thin;
     scroll-behavior: smooth;
+    scroll-padding-top: 82px;
 }
 
 html:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
@@ -530,6 +547,15 @@ nav[aria-label="breadcrumb"] li:last-child a{
     right: 0;
     left: 0;
     bottom: 0;
+}
+
+.post-single-content h1:not(h1:first-child),
+.post-single-content h2:not(h2:first-child),
+.post-single-content h3:not(h3:first-child),
+.post-single-content h4:not(h4:first-child),
+.post-single-content h5:not(h5:first-child),
+.post-single-content h6:not(h6:first-child) {
+    margin-top: 32px;
 }
 
 /*=================================================================
@@ -1587,6 +1613,23 @@ pre.chroma {
 .h-captcha {
     margin: 4px 0;
 }
+
+/* input[type="text"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+input.input {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    border: 0px;
+    caret-color: #03d7f2;
+    caret-width: 10px;
+} */
 
 /*==================================================================
     Social sharing buttons from Sharingbuttons.io
