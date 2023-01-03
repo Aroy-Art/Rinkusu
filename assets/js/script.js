@@ -148,7 +148,7 @@ jQuery(function ($) {
 		autoplaySpeed: 1500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		lazyLoad: 'progressive',
+		lazyLoad: 'progressive', /* ondemand */
 		centerMode: true,
   		variableWidth: true
 	});

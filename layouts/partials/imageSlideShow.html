@@ -22,13 +22,13 @@
                     {{ $image_thumb := slice }}
                     {{ range .portfolio_categories }}
                         {{ range .portfolio_items }}
-                        {{ $images = $images | append .image }}
-                        {{ $image_thumb := $image_thumb | append .image_thumb }}
+                            {{ $images = $images | append .image }}
+                            {{ $image_thumb := $image_thumb | append .image_thumb }}
 
                         {{- $original := resources.Get .image -}}
                         {{ $thumb := $original.Resize "x320" }}
                         <div class="item item-center">
-                                <img class="img-fluid lozad AC-img" data-lazy="{{ $thumb.RelPermalink }}" alt="{{ .name }}" title="{{ .name }}">
+                                <img class="img-fluid AC-img" data-lazy="{{ $thumb.RelPermalink }}" alt="{{ .name }}" title="{{ .name }}">
                         </div>
                         {{ end }}
                     {{ end }}
