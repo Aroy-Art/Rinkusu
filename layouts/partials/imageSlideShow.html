@@ -28,9 +28,18 @@
                                 {{- $original := resources.Get .image -}}
                                 {{ $thumb := $original.Resize "x320" }}
                                 {{ $image := $original.Fit "1080x1080" }}
-                                <a class="item item-center image-popup-gallery" data-mfp-src="{{ $image.RelPermalink }}">
-                                        <img class="img-fluid AC-img" data-lazy="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
-                                </a>  
+                                
+                                {{ if eq site.Params.onNetlify true }}
+                                    <a class="item item-center image-popup-gallery" data-mfp-src="{{ $image.RelPermalink }}">
+                                        <img class="img-fluid AC-img" src="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
+                                    </a>
+
+                                {{ else }}
+                                    <a class="item item-center image-popup-gallery" data-mfp-src="{{ $image.RelPermalink }}">
+                                            <img class="img-fluid AC-img" data-lazy="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
+                                    </a>
+
+                                {{ end }}
                             {{ end }}
                             
                             {{/*  {{ $image_thumb := $image_thumb | append .image_thumb }}  */}}
