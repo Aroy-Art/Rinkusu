@@ -111,6 +111,9 @@ jQuery(function ($) {
 				this.st.mainClass = this.st.el.attr('data-effect');
 			}
 		},
+		gallery:{
+			enabled:true
+		},
 		closeOnContentClick: true,
 		midClick: true,
 		fixedContentPos: false,
