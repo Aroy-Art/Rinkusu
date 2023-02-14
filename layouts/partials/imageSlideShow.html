@@ -18,18 +18,23 @@
 
                 </div>
                 <div id="ArtCarousel" class="wow fadeInUp center-block" data-wow-duration="500ms" data-wow-delay="100ms">
-                    {{ $images := slice }}
-                    {{ $image_thumb := slice }}
+                    {{/*  {{ $images := slice }}
+                    {{ $image_thumb := slice }}  */}}
                     {{ range .portfolio_categories }}
                         {{ range .portfolio_items }}
-                            {{ $images = $images | append .image }}
-                            {{ $image_thumb := $image_thumb | append .image_thumb }}
+                            {{ if eq .slideshow true }}
+                                {{/*  {{ $images = $images | append .image }}    */}}
+                                
+                                {{- $original := resources.Get .image -}}
+                                {{ $thumb := $original.Resize "x320" }}
+                                {{ $image := $original.Fit "1080x1080" }}
+                                <a class="item item-center image-popup-gallery" data-mfp-src="{{ $image.RelPermalink }}">
+                                        <img class="img-fluid AC-img" data-lazy="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
+                                </a>  
+                            {{ end }}
+                            
+                            {{/*  {{ $image_thumb := $image_thumb | append .image_thumb }}  */}}
 
-                        {{- $original := resources.Get .image -}}
-                        {{ $thumb := $original.Resize "x320" }}
-                        <div class="item item-center">
-                                <img class="img-fluid AC-img" data-lazy="{{ $thumb.RelPermalink }}" alt="{{ .name }}" title="{{ .name }}">
-                        </div>
                         {{ end }}
                     {{ end }}
                 </div>
