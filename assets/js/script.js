@@ -101,7 +101,7 @@ jQuery(function ($) {
 	/* ========================================================================= */
 	/*	Magnific popup
 	/* =========================================================================  */
-	$('.image-popup').magnificPopup({
+	$('.image-popup-gallery').magnificPopup({
 		type: 'image',
 		removalDelay: 160, //delay removal by X to allow out-animation
 		callbacks: {
