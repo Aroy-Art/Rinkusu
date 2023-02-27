@@ -156,21 +156,10 @@ jQuery(function ($) {
   		variableWidth: true
 	});
 
-	/* ========================================================================= */
-	/*	Testimonial Carousel
-	/* =========================================================================  */
-
-	$("#testimonials").slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 4000
-	});
 
 	/* ========================================================================= */
 	/*	animation scroll js
 	/* ========================================================================= */
-
 	function myFunction(x) {
 		if (x.matches) {
 			var topOf = 50
