@@ -74,6 +74,13 @@ h6 {
 
 p {
     font-family: "Roboto Mono", sans-serif;
+    font-weight: normal;
+}
+
+strong {
+	font-weight: strong;
+	font-size: 1.1rem;
+	color: darkturquoise;
 }
 
 [scroll-behavior=smooth] {
