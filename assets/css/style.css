@@ -43,7 +43,8 @@ html:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
 }
 
 html:not([hide-scrollbar]) ::-webkit-scrollbar {
-    width: 8px !important;
+    width: 4px !important;
+    height: 4px !important;
 }
 
 ::-webkit-scrollbar-track {
