@@ -196,6 +196,11 @@ table, td, th {
     padding: 6px; 
 }
 
+ol li::marker {
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .hidden {
     display: none;
 }
