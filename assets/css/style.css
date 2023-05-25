@@ -20,7 +20,8 @@ Author: Aroy (https://aroy-art.com)
     --neon-color: #39ff14;
     --neon-pink-color: #ff00d4;
 
-
+    --bg-light: #0f1e31;
+    --bg-dark: #040b1e;
 }
 
 
@@ -491,7 +492,7 @@ ol li::marker {
 }
 
 .breadcrumb {
-    background-color: #0f1e31;
+    background-color: var(--bg-dark, #040b1e);
 }
 
 nav[aria-label="breadcrumb"] li:last-child a{
