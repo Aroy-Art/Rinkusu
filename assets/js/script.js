@@ -175,7 +175,7 @@ jQuery(function ($) {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				html_body.animate({
-					scrollTop: target.offset().top - 50
+					scrollTop: target.offset().top - 82 // Value for scroll-padding 
 				}, 1500, 'easeInOutExpo');
 				return false;
 			}
