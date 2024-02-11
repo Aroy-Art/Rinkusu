@@ -592,6 +592,7 @@ nav[aria-label="breadcrumb"] li:last-child a{
     padding: 0;
     margin: 0;
     border-radius: 0 4px 4px 4px;
+    border: 2px purple solid;
 }
   
 .highlight > .chroma {
@@ -630,13 +631,13 @@ pre.chroma {
 .chroma [data-lang]:before {
     position:absolute;
     z-index:0;
-    top: -24px;
-    left:0;
+    top: -26px;
+    left: 0;
     content:attr(data-lang);
     font-size:1em;
     font-weight:700;
     color: #00fff9;
-    background-color: #212121;
+    background-color: #575757;
     border-radius: 4px 4px 0 0;
     border:none;
     padding:5px 10px 7px;
