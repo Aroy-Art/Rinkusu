@@ -12,6 +12,21 @@ $(window).on('load', function () {
 const observer = lozad(); // lazy loads elements with default selector as ".lozad"
 observer.observe();
 
+/* ========================================================================= */
+/* init Masonry for blog list
+/* ========================================================================= */
+var grid = document.querySelector('.blog-post');
+
+if (grid) {
+  var msnry = new Masonry(grid, {
+    percentPosition: true
+  });
+
+  imagesLoaded(grid).on('progress', function() {
+    // layout Masonry after each image loads
+    msnry.layout();
+  });
+}
 
 /* ========================================================================= */
 /*	Image Preloader
@@ -20,7 +35,6 @@ function imgIsLoaded(imgElement) {
 	$(imgElement).addClass("loaded");
 	$(imgElement).removeClass("unloaded");
 }
-
 
 /* ========================================================================= */
 /*	Code Copy Button
