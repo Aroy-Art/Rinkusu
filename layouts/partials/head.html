@@ -13,6 +13,8 @@
     <meta name="theme-color" content="{{ site.Params.themeColor }}">
     {{ end }}
 
+    {{ template "partials/opengraph.html" . }}
+
     {{ "<!-- Plugins -->" | safeHTML }}
     {{ range site.Params.plugins.css }}
     <link rel="stylesheet" href="{{ .link | absURL }}">
