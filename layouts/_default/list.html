@@ -21,7 +21,7 @@
             
         {{ partial "tagcloud.html" . }}
                 
-        <div class="row blog-post" data-masonry='{ "percentPosition": true }'>
+        <div class="row masonry-grid" data-masonry='{ "percentPosition": true }'>
             {{ $paginator := .Paginate .Data.Pages}}
             {{ range $paginator.Pages }}
                 {{ .Render "article" }}

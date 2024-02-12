@@ -43,7 +43,7 @@
             {{"<!-- /Section Title -->" | safeHTML}}
         </div>
             
-        <div class="row portfolio-category" data-masonry='{ "percentPosition": true }'>
+        <div class="row portfolio-category masonry-grid" data-masonry='{ "percentPosition": true }'>
             {{ $category := .name }}
             {{ range .portfolio_items }}
             {{- $original := resources.Get .image -}}

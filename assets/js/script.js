@@ -15,18 +15,20 @@ observer.observe();
 /* ========================================================================= */
 /* init Masonry for blog list
 /* ========================================================================= */
-var grid = document.querySelector('.blog-post');
+var grids = document.querySelectorAll('.masonry-grid');
 
-if (grid) {
-  var msnry = new Masonry(grid, {
-    percentPosition: true
-  });
+grids.forEach(function(grid) {
+  if (grid) {
+    var msnry = new Masonry(grid, {
+      percentPosition: true
+    });
 
-  imagesLoaded(grid).on('progress', function() {
-    // layout Masonry after each image loads
-    msnry.layout();
-  });
-}
+    imagesLoaded(grid).on('progress', function() {
+      // layout Masonry after each image loads
+      msnry.layout();
+    });
+  }
+});
 
 /* ========================================================================= */
 /*	Image Preloader
