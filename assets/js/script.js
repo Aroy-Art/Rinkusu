@@ -12,6 +12,23 @@ $(window).on('load', function () {
 const observer = lozad(); // lazy loads elements with default selector as ".lozad"
 observer.observe();
 
+/* ========================================================================= */
+/* init Masonry for blog list
+/* ========================================================================= */
+var grids = document.querySelectorAll('.masonry-grid');
+
+grids.forEach(function(grid) {
+  if (grid) {
+    var msnry = new Masonry(grid, {
+      percentPosition: true
+    });
+
+    imagesLoaded(grid).on('progress', function() {
+      // layout Masonry after each image loads
+      msnry.layout();
+    });
+  }
+});
 
 /* ========================================================================= */
 /*	Image Preloader
@@ -20,7 +37,6 @@ function imgIsLoaded(imgElement) {
 	$(imgElement).addClass("loaded");
 	$(imgElement).removeClass("unloaded");
 }
-
 
 /* ========================================================================= */
 /*	Code Copy Button
@@ -175,7 +191,7 @@ jQuery(function ($) {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				html_body.animate({
-					scrollTop: target.offset().top - 50
+					scrollTop: target.offset().top - 82 // Value for scroll-padding 
 				}, 1500, 'easeInOutExpo');
 				return false;
 			}

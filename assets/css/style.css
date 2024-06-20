@@ -20,7 +20,8 @@ Author: Aroy (https://aroy-art.com)
     --neon-color: #39ff14;
     --neon-pink-color: #ff00d4;
 
-
+    --bg-light: #0f1e31;
+    --bg-dark: #040b1e;
 }
 
 
@@ -30,7 +31,7 @@ Author: Aroy (https://aroy-art.com)
 }
 
 html {
-    background-color: #0f1e31;
+    background-color: #040b1e;
     color: var(--text-light, #bad8dd);
     scrollbar-color: #ff00d4 #040b1e;
     scrollbar-width: thin;
@@ -194,6 +195,11 @@ table, th {
 
 table, td, th {
     padding: 6px; 
+}
+
+ol li::marker {
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .hidden {
@@ -486,7 +492,7 @@ table, td, th {
 }
 
 .breadcrumb {
-    background-color: #0f1e31;
+    background-color: var(--bg-dark, #040b1e);
 }
 
 nav[aria-label="breadcrumb"] li:last-child a{
@@ -569,7 +575,80 @@ nav[aria-label="breadcrumb"] li:last-child a{
 /*=================================================================
     Shortcodes
 =================================================================*/
+ 
+details {
+    margin: 1rem auto;
+    padding: 0 1rem;
+    /* width: 35em; */
+    max-width: calc(100% - 2rem);
+    position: relative;
+    border: 1px solid #78909C;
+    border-radius: 6px;
+    background-color: #040b1e;
+    color: #c9a5e7;
+    transition: background-color 0.15s;
+}
 
+details > :last-child {
+    margin-bottom: 1rem;
+}
+
+details::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    opacity: 0.15;
+    box-shadow: 0 0.25em 0.5em #263238;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: -1;
+}
+
+details[open] {
+    background-color: #040b1e;
+}
+
+details[open]::before {
+    opacity: 0.6;
+}
+  
+summary {
+    padding: 1rem 2em 1rem 0;
+    display: block;
+    position: relative;
+    font-size: 1.33em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+summary::before, summary::after {
+    width: 0.75em;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    content: "";
+    background-color: currentColor;
+    text-align: right;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+}
+
+summary::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+[open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
 
 /*=================================================================
     Code Blocks
@@ -586,6 +665,7 @@ nav[aria-label="breadcrumb"] li:last-child a{
     padding: 0;
     margin: 0;
     border-radius: 0 4px 4px 4px;
+    border: 2px purple solid;
 }
   
 .highlight > .chroma {
@@ -624,13 +704,13 @@ pre.chroma {
 .chroma [data-lang]:before {
     position:absolute;
     z-index:0;
-    top: -24px;
-    left:0;
+    top: -26px;
+    left: 0;
     content:attr(data-lang);
     font-size:1em;
     font-weight:700;
     color: #00fff9;
-    background-color: #212121;
+    background-color: #575757;
     border-radius: 4px 4px 0 0;
     border:none;
     padding:5px 10px 7px;

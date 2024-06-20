@@ -16,42 +16,51 @@
                 {{"<!-- Title -->" | safeHTML}}
                 <div class="title text-center">
                     <h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
-						{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+                        {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
                     <div class="border-Rinkusu"></div>
                 </div>
+                <p class="text-center mb-4">
+                    {{ .description }}
+                </p>
                 {{"<!-- /Title -->" | safeHTML}}
             </div>
         </div>
+
+        
         {{ range .portfolio_categories }}
         {{ $text_color := .text_color}}
-        <div class="row portfolio-category">
-            
-            <div class="col-12">
-                {{"<!-- Section Title -->" | safeHTML}}
-                <div class="title text-center">
-                    <h2 class="portfolio-category-title" style="background-color: {{ .bg_color}};">
-                        {{ with .name }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span style="color: {{ $text_color }};">
-                        {{ with .name }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
-                    <div class="border-Rinkusu"></div>
-                </div>
-                {{"<!-- /Section Title -->" | safeHTML}}
+        <div class="row">    
+            {{"<!-- Section Title -->" | safeHTML}}
+            <div class="pb-2 title text-center">
+                <h2 class="portfolio-category-title" style="background-color: {{ .bg_color }};">
+                    {{ with .name }} {{ index (split . " ") 0 | safeHTML }} {{ end }}
+                    <span style="color: {{ $text_color }};">
+                    {{ with .name }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+                    </span>
+                </h2>
+                <div class="border-Rinkusu"></div>
             </div>
-
-            <div class="masonry-wrapper">
-                <div class="masonry">
-                    {{ $category := .name }}
-                    {{ range .portfolio_items }}
-                        {{- $original := resources.Get .image -}}
-                        {{ $thumb := $original.Fit "512x512" }}
-                        {{ $image := $original.Fit "1080x1080" }}
-                        <a class="masonry-item" href="{{ $image.RelPermalink }}" data-lightbox="{{ $category }}" data-title="{{ .name }}">                            
-                            <img src="{{ $thumb.RelPermalink }}" alt="" class="masonry-content">
-                        </a>
-                    {{ end }}
-                </div>
-            </div>
+            {{"<!-- /Section Title -->" | safeHTML}}
         </div>
+            
+        <div class="row portfolio-category masonry-grid" data-masonry='{ "percentPosition": true }'>
+            {{ $category := .name }}
+            {{ range .portfolio_items }}
+            {{- $original := resources.Get .image -}}
+            {{ $thumb := $original.Fit "512x512" }}
+            {{ $image := $original.Fit "1080x1080" }}
+            <div class="col-sm-4 col-lg-3 my-2">
+                <a class="card bg-transparent" href="{{ $image.RelPermalink }}" data-lightbox="{{ $category }}" data-title="{{ .name }}">                            
+                    <img class="card-img" src="{{ $thumb.RelPermalink }}" alt="">
+                </a>
+            </div>
+            {{ end }}
+        </div>
+            
+        
         {{ end }}
+    </div>
+        
     </div>
     <script src="{{ .image_loaded_plugin }}"></script>
 </section>

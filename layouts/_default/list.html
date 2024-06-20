@@ -10,26 +10,31 @@
         <div class="row">
             <div class="col-12">
                 {{"<!-- Section Title -->" | safeHTML }}
-                <dir class="title text-center wow fadeInDown">
+                <div class="title text-center wow fadeInDown">
                     <h2>{{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
                         {{ with i18n "blogTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }}</span></h2>
-                        <div class="border-Rinkusu"></div>
-                </dir>
+                    <div class="border-Rinkusu"></div>
+                </div>
+                {{"<!-- /Section Title -->" | safeHTML }}
             </div>
-
-            {{ partial "tagcloud.html" . }}
-
-            {{"<!-- Section Title -->" | safeHTML }}
+        </div>    
+            
+        {{ partial "tagcloud.html" . }}
+                
+        <div class="row masonry-grid" data-masonry='{ "percentPosition": true }'>
             {{ $paginator := .Paginate .Data.Pages}}
             {{ range $paginator.Pages }}
-            {{ .Render "article" }}
+                {{ .Render "article" }}
             {{ end }}
+        
             <div class="col-12">
                 {{ template "_internal/pagination.html" . }}
             </div>
         </div>
     </div>
+    <script src="/plugins/image-loaded/imagesloaded.pkgd.min.js"></script>
 </section>
 {{"<!-- /Blog Section -->" | safeHTML }}
 
 {{ end }}
+    
