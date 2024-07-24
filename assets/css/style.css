@@ -100,6 +100,7 @@ pre {
 ::-moz-selection {
     /* Firefox Code */
     color: #57cbcc;
+    font-weight: bold;
     background: #750cf2;
 }
 
