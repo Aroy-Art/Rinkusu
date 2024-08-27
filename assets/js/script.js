@@ -27,6 +27,11 @@ grids.forEach(function(grid) {
       // layout Masonry after each image loads
       msnry.layout();
     });
+
+    // layout Masonry after page load
+    $(window).on('load', function() {
+      msnry.layout();
+    });
   }
 });
 
