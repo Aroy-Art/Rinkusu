@@ -972,7 +972,7 @@ pre.chroma {
     height: 38px;
     width: 38px;
     text-align: center;
-    z-index: 5;
+    z-index: 10000;
     
 }
 
