@@ -6,7 +6,7 @@
         
         {{ partial "get_tags.html" . }}
 
-        <div class="content">
+        <div class="content pt-0">
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             <p>{{ .Summary }}</p>
             <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>

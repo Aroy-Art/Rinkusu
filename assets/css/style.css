@@ -759,7 +759,7 @@ pre.chroma {
     Tags
 =================================================================*/
 .tagContainer{
-    margin: 16px
+    margin: 16px 16px 0 16px;
 }
 
 .tags {
