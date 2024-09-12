@@ -9,30 +9,37 @@
 <section class="section">
     <div class="container">
         <div class="row bg-one">
+            
             <div class="col-lg-8 offset-lg-2 text-center">
-                <h1>{{ .Title }}</h1>
-                <ul class="list-inline mb-50">
+
+                <img class="mt-4 mb-2 lozad rounded-3 img-fluid" src="{{ .Params.Image | absURL }}" alt="blog-image">
+
+                <ul class="list-inline my-4 text-center">
                     <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.Author }}</a></li>
                     <li class="list-inline-item">Published Date: {{ with site.Params.dateFormat | default "2006-01-02" | .Date.Format }} {{ . }} {{ end }}</li>
                     <li class="list-inline-item">Last Modified: {{ with site.Params.dateFormat | default "2006-01-02" | .Lastmod.Format }} {{ . }} {{ end }}</li>
                 </ul>
-            <img class="img-fluid mb-50 lozad" src="{{ .Params.Image | absURL }}" alt="blog-image">
 
-            {{ partial "get_tags.html" . }}
+                {{ partial "get_tags.html" . }}            
 
-        </div>
-            <div class="col-lg-8 offset-lg-2">
-            <div class="post-single-content">
-                {{ .Content }}
             </div>
-                {{ if site.Params.post_share }}
-                {{ partial "post_share.html" . }}
-                {{ end }}
 
-                <!-- comments -->
-                {{ if site.Params.comments }}
-                {{ partial "comments.html" . }}
-                {{ end }}
+            <h1 class="text-center mx-50 px-lg-5 px-md-5">{{ .Title }}</h1>
+
+            <div class="col-lg-8 offset-lg-2">
+
+                <div class="post-single-content">
+                    {{ .Content }}
+                </div>
+                    {{ if site.Params.post_share }}
+                        {{ partial "post_share.html" . }}
+                    {{ end }}
+
+                    <!-- comments -->
+                    {{ if site.Params.comments }}
+                        {{ partial "comments.html" . }}
+                    {{ end }}
+                </div>
             </div>
         </div>
     </div>
