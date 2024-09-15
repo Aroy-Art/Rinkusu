@@ -1,5 +1,5 @@
 {{"<!-- Nav Bar -->" | safeHTML }}
-<section class="sticky-top navigation border-glow">
+<section id="navigation" class="sticky-top navigation border-glow">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand p-0" href="{{ .Site.BaseURL | relLangURL }}">
@@ -10,11 +10,11 @@
                 {{ end }}
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-bs-collapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
                 
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation-bs-collapse">
                 <ul class="navbar-nav">
                     {{ range site.Menus.main }}
                     <li class="nav-item">
