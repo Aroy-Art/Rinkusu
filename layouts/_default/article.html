@@ -1,7 +1,7 @@
 <article class="col-sm-6 col-lg-4 mb-4 clearfix" data-wow-duration="500ms">
     <div class="card post-block border-glow-2">
         <div class="card-img">
-            <img class="img-fluid" src="{{ .Params.Image_webp | absURL }}" alt="{{ .Params.image_alt }}">
+            <img class="img-fluid" src="{{ .Params.image | absURL }}" alt="{{ .Params.image_alt }}">
         </div>
         
         {{ partial "get_tags.html" . }}
