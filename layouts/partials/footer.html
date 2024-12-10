@@ -28,7 +28,7 @@
                     <div class="social-icon text-center col-sm">
                         <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
                         <a href="{{ site.Params.sketchfab.link | safeHTML }}" class="social-icon-a">
-                            <img class="social-icon-img" src="{{ site.Params.sketchfab.img | absURL }}"> 
+                            <img class="social-icon-img" src="{{ site.Params.sketchfab.img | absURL }}" alt="{{ site.Params.sketchfab.img_alt }}"> 
                         </a>
                     </div>
                     {{ end }}
@@ -38,7 +38,7 @@
                     <div class="social-icon text-center col-sm">
                         <h2>{{ site.Params.itchio.text | markdownify }}</h2>
                         <a href="{{ site.Params.itchio.link | safeHTML }}" class="social-icon-a">
-                            <img class="social-icon-img" src="{{ site.Params.itchio.img | absURL }}"> 
+                            <img class="social-icon-img" src="{{ site.Params.itchio.img | absURL }}" alt="{{ site.Params.itchio.img_alt }}"> 
                         </a>
                     </div>
                     {{ end }}
@@ -49,7 +49,7 @@
                 {{ "<!-- Copyright -->" | safeHTML }}
                 <div class="copyright text-center">
                     <a href="{{ site.Home.Permalink }}">
-                        <img src="{{ site.Params.logo | absURL }}" height="128">
+                        <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Params.logo_alt }}" height="128">
                     </a>
                     <br>
                     <p>{{ site.Params.copyright | markdownify }}</p>
