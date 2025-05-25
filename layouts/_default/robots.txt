@@ -1,0 +1,20 @@
+User-agent: *
+{{ if .Site.Params.robots.disallow_all }}
+Disallow: /
+{{ else if .Site.Params.robots.allow_all }}
+Disallow:
+{{ else }}
+{{ range .Site.Params.robots.disallowed_paths }}
+Disallow: {{ . }}
+{{ end }}
+{{ end }}
+
+{{ range .Site.Params.robots.blocked_bots }}
+User-agent: {{ . }}
+Disallow: /
+{{ end }}
+
+# Add Sitemap if you have one
+{{ if .Site.Params.robots.sitemap_enabled | default true }}
+Sitemap: {{ .Site.BaseURL | absURL }}sitemap.xml
+{{ end }}
