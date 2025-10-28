@@ -964,10 +964,10 @@ pre.chroma {
     top: 92vh;
     background-color: #0cbcf2;
     box-shadow: 2px 2px 2px black;
-    padding: 5px 5px 16px 5px;
+    padding: 3px 0 0;
     border: 1px solid #6bffec;
     border-radius: 50%;
-    font-size: 28px;
+    font-size: 26px;
     display: inline-block;
     height: 38px;
     width: 38px;
