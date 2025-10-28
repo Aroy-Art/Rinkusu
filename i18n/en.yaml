@@ -30,3 +30,5 @@
   translation: Blog
 - id: contact
   translation: Contact
+- id: updated
+  translation: Updated

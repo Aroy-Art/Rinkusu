@@ -3,11 +3,17 @@
         <div class="card-img">
             <img class="img-fluid" src="{{ .Params.image | absURL }}" alt="{{ .Params.image_alt }}">
         </div>
-        
+
         {{ partial "get_tags.html" . }}
 
         <div class="content pt-0">
-            <small>{{ .Params.Date | time.Format "2006-01-02" }}</small>
+            <small>
+                {{ .Params.Date | time.Format "2006-01-02" }}
+                {{ if eq .Params.lastmod .Params.Date }}
+                {{ else }}
+                &middot; {{ i18n "updated" }} {{ .Params.Lastmod | time.Format "2006-01-02" }}
+                {{ end }}
+            </small>
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             <p>{{ .Plain | htmlUnescape | truncate 256 }}</p>
             <a class="btn btn-transparent" href="{{ .Permalink }}" aria-label="Read more about {{ .Title }}">{{ i18n "readMore" }}</a>
