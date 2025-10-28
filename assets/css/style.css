@@ -1666,22 +1666,26 @@ pre.chroma {
 
 
 /*==================================================================
-    Art Carousel
+    Carousel
 ==================================================================*/
-#ArtCarousel{
+.carousel{
     background-color: #0f1e31;
     border-radius: 10px;
     padding: 16px;
 }
 
 .item img {
-    padding: 0 4px;
+    margin: 4px 4px;
     border-radius: 10px;
+    height: 320px;
+    width: auto;
+    display: block;
 }
 
 .item-center {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 /*==================================================================

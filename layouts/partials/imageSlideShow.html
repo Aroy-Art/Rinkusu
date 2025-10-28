@@ -17,9 +17,9 @@
                 <div class="slides slow">
 
                 </div>
-                <div id="ArtCarousel" class="wow fadeInUp center-block" data-wow-duration="500ms" data-wow-delay="100ms">
                     {{/*  {{ $images := slice }}
                     {{ $image_thumb := slice }}  */}}
+                <div id="ArtCarousel" class="carousel wow fadeInUp center-block" data-wow-duration="500ms" data-wow-delay="100ms">
                     {{ range .portfolio_categories }}
                         {{ range .portfolio_items }}
                             {{ if eq .slideshow true }}
