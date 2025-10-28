@@ -10,7 +10,7 @@
             <small>{{ .Params.Date | time.Format "2006-01-02" }}</small>
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             <p>{{ .Plain | htmlUnescape | truncate 256 }}</p>
-            <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+            <a class="btn btn-transparent" href="{{ .Permalink }}" aria-label="Read more about {{ .Title }}">{{ i18n "readMore" }}</a>
         </div>
     </div>
 </article>
