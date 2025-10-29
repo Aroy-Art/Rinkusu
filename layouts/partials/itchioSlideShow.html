@@ -1,0 +1,54 @@
+{{ $data := index site.Data.itchio }}
+
+{{ with $data.itchio }}
+{{ "<!-- Itch.io Slide Show -->" | safeHTML }}
+<section class="section bg-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                {{"<!-- Start Section Title -->" | safeHTML}}
+                <div class="title text-center wow fadeInDown">
+                    <h2> {{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+                         {{ with .title }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
+                    <div class="border-Rinkusu"></div>
+                </div>
+                {{"<!-- End Section Title -->" | safeHTML}}
+
+                <div id="ItchioCarousel" class="carousel wow fadeInUp center-block" data-wow-duration="500ms" data-wow-delay="100ms">
+                    {{ range .categories }}
+                        {{ range .items }}
+                            {{ if eq .slideshow true }}
+                            
+                            <div class="item" href="{{ .link }}">
+                                <div class="item-center">
+                                {{ if .image }}
+                                    
+                                    {{- $isURL := or (hasPrefix .image "http://") (hasPrefix .image "https://") -}}
+                                    
+                                    {{ if $isURL }}
+                                        <img class="img-fluid" src="{{ .image }}" alt="{{ .image_alt }}" title="{{ .name }}">
+                                    {{ else }}
+                                        {{- $original := resources.Get .image -}}
+                                        {{ $thumb := $original.Resize "x320" }}
+                                        {{ $image := $original.Fit "1080x1080" }}
+                                        <img class="img-fluid" src="{{ $thumb.RelPermalink }}" alt="{{ .name }}" title="{{ .name }}">
+                                    {{ end }}
+                                {{ end }}
+                                <a class="itch-play-button" href="{{ .link }}">Play on Itch.io</a>
+                                </div>
+                            </div>
+
+                            {{ end }}
+
+                        {{ end }}
+                    {{ end }}
+                </div>
+                {{/* <div class="all-post text-center col-lg-12">
+                    <a class="btn btn-main" href="{{ `portfolio` | absLangURL }}/">{{ "view More" }}</a>
+                </div> */}}
+            </div>
+        </div>
+    </div>
+</section>
+{{ "<!-- /Itch.io Slide Show -->" | safeHTML }}
+{{ end }}

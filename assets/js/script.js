@@ -178,6 +178,22 @@ jQuery(function ($) {
     });
 
     /* ========================================================================= */
+    /*	Itch.io Carousel
+    /* ========================================================================= */
+
+    $("#ItchioCarousel").slick({
+        infinite: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        lazyLoad: 'progressive', /* ondemand */
+        centerMode: true,
+        variableWidth: true
+    });
+
+    /* ========================================================================= */
     /*	animation scroll js
     /* ========================================================================= */
     var html_body = $('html, body');
