@@ -1,6 +1,7 @@
 {{ $data := index site.Data.portfolio }}
 
 {{ with $data.portfolio }}
+{{ "<!-- Image Slide Show -->" | safeHTML }}
 <section class="section bg-2">
     <div class="container">
         <div class="row">
@@ -13,17 +14,10 @@
                 </div>
                 {{"<!-- End Section Title -->" | safeHTML}}
 
-
-                <div class="slides slow">
-
-                </div>
-                    {{/*  {{ $images := slice }}
-                    {{ $image_thumb := slice }}  */}}
                 <div id="ArtCarousel" class="carousel wow fadeInUp center-block" data-wow-duration="500ms" data-wow-delay="100ms">
                     {{ range .portfolio_categories }}
                         {{ range .portfolio_items }}
                             {{ if eq .slideshow true }}
-                                {{/*  {{ $images = $images | append .image }}    */}}
                                 
                                 {{- $original := resources.Get .image -}}
                                 {{ $thumb := $original.Resize "x320" }}
@@ -31,27 +25,26 @@
                                 
                                 {{ if eq site.Params.onNetlify true }}
                                     <a class="item item-center image-popup-gallery" data-mfp-src="{{ $image.RelPermalink }}">
-                                        <img class="img-fluid AC-img" src="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
+                                        <img class="img-fluid" src="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
                                     </a>
 
                                 {{ else }}
-                                    <a class="item item-center image-popup-gallery" data-mfp-src="{{ $image.RelPermalink }}">
-                                        <img class="img-fluid AC-img" data-lazy="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
-                                    </a>
+                                    <div class="item item-center image-popup-gallery pe-auto" data-mfp-src="{{ $image.RelPermalink }}">
+                                        <img class="img-fluid" data-lazy="{{ $thumb.RelPermalink }}" onerror='this.onerror=null,this.src="{{ $thumb.RelPermalink }}"' alt="{{ .name }}" title="{{ .name }}">
+                                    </div>
 
                                 {{ end }}
                             {{ end }}
-                            
-                            {{/*  {{ $image_thumb := $image_thumb | append .image_thumb }}  */}}
 
                         {{ end }}
                     {{ end }}
                 </div>
                 <div class="all-post text-center col-lg-12">
-                    <a class="btn btn-main" href="{{ `portfolio` | absLangURL }}">{{ "view More Art" }}</a>
+                    <a class="btn btn-main" href="{{ `portfolio` | absLangURL }}/">{{ "view More Art" }}</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+{{ "<!-- /Image Slide Show -->" | safeHTML }}
 {{ end }}
