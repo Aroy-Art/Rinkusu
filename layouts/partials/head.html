@@ -5,10 +5,13 @@
     {{ "<!-- Mobile responsive meta -->" | safeHTML }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    
     {{ with site.Params.author }}
     <meta name="author" content="{{ . }}">
     {{ end }}
+    
     {{ hugo.Generator }}
+
     {{ if site.Params.themeColor }}
     <meta name="theme-color" content="{{ site.Params.themeColor }}">
     {{ end }}
