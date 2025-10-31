@@ -11,6 +11,7 @@
                     <h2> {{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
                          {{ with .title }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
                     <div class="border-Rinkusu"></div>
+                    <p class="m-auto pt-5 col-12 col-lg-6 col-xl-8"> {{ .description }} </p>
                 </div>
                 {{"<!-- End Section Title -->" | safeHTML}}
 
