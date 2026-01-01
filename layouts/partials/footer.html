@@ -52,7 +52,20 @@
                         <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Params.logo_alt }}" height="128">
                     </a>
                     <br>
-                    <p>{{ site.Params.copyright | markdownify }}</p>
+                    <p>
+                        {{- $startYear := site.Params.copyright_start_year -}}
+                        {{- $currentYear := now.Format "2006" -}}
+                        
+                        {{/* Calculate Year Display */}}
+                        {{- $yearDisplay := string $currentYear -}}
+                        {{- if and $startYear (lt (int $startYear) (int $currentYear)) -}}
+                            {{- $yearDisplay = printf "%s–%s" (string $startYear) (string $currentYear) -}}
+                        {{- end -}}
+                        {{/* Replace the {year} placeholder with our dynamic year */}}
+                        {{- $finalText := replace site.Params.copyright_text "{year}" $yearDisplay -}}
+                        
+                        {{- $finalText | safeHTML -}}
+                    </p>
                     {{ if site.Params.license }}
                     <p class="license">{{ site.Params.license | markdownify }}</p>    
                     {{ end }}
