@@ -1,12 +1,13 @@
-<div class="mt-5">
-    {{ if site.Params.utteranc.enable }}
-    <script src="https://utteranc.es/client.js"
-        repo="{{ site.Params.utteranc.repo }}"
-        issue-term="{{ site.Params.utteranc.issue_term }}"
-        label="{{ site.Params.utteranc.label }}"
-        theme="{{ site.Params.utteranc.theme }}"
-        crossorigin="{{ site.Params.utteranc.crossorigin }}"
-        async>
-    </script>
-    {{ end }}
+{{ if site.Params.utteranc.enable }}
+<div class="mt-3">
+	<script src="https://utteranc.es/client.js"
+	        repo="{{ site.Params.utteranc.repo }}"
+	        issue-term="{{ site.Params.utteranc.issue_term }}"
+	        label="{{ site.Params.utteranc.label }}"
+	        theme="{{ site.Params.utteranc.theme }}"
+	        crossorigin="{{ site.Params.utteranc.crossorigin }}"
+	        async
+	>
+	</script>
 </div>
+{{ end }}
