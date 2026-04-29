@@ -3,9 +3,29 @@
 {{ if $data.banner.enable }}
 {{ with $data.banner }}
 {{ "<!-- Welcome Slider -->" | safeHTML }}
-<section class="hero-area" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
-    <!-- this image is for trigger this section fallback background image -->
-    <img class="d-none" src="{{ .bg_image_webp | absURL }}" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'"/>
+
+{{ $src := resources.Get "images/header.jpg" }}
+
+{{ $w640jpg  := $src.Resize "640x jpg q85" }}
+{{ $w1280jpg := $src.Resize "1280x jpg q85" }}
+{{ $w1920jpg := $src.Resize "1920x jpg q85" }}
+{{ $w2560jpg := $src.Resize "2560x jpg q85" }}
+
+{{ $w640webp  := $src.Resize "640x webp q85" }}
+{{ $w1280webp := $src.Resize "1280x webp q85" }}
+{{ $w1920webp := $src.Resize "1920x webp q85" }}
+{{ $w2560webp := $src.Resize "2560x webp q85" }}
+
+<section class="hero-area">
+    <picture class="hero-bg-picture" aria-hidden="true">
+        <source type="image/webp"
+            srcset="{{ $w640webp.RelPermalink }} 640w, {{ $w1280webp.RelPermalink }} 1280w, {{ $w1920webp.RelPermalink }} 1920w, {{ $w2560webp.RelPermalink }} 2560w"
+            sizes="100vw">
+        <source type="image/jpeg"
+            srcset="{{ $w640jpg.RelPermalink }} 640w, {{ $w1280jpg.RelPermalink }} 1280w, {{ $w1920jpg.RelPermalink }} 1920w, {{ $w2560jpg.RelPermalink }} 2560w"
+            sizes="100vw">
+        <img src="{{ $w1280jpg.RelPermalink }}" alt="" width="{{ $w1280jpg.Width }}" height="{{ $w1280jpg.Height }}">
+    </picture>
 
     <div class="block">
         {{ if .icon }}

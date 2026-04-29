@@ -998,6 +998,7 @@ pre.chroma {
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 2;
 }
 
 .hero-area .block {
@@ -1080,6 +1081,22 @@ pre.chroma {
 
 .hero-area-video .block .btn-main {
     margin-top: 20px;
+}
+
+.hero-area .hero-bg-picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-area .hero-bg-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom left;
+    display: block;
 }
 
 
