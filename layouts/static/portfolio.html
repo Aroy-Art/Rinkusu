@@ -6,7 +6,7 @@
 
 {{ partial "bradcrumb.html" . }}
 
-{{ $data := index site.Data }}
+{{ $data := index hugo.Data }}
 
 {{ if $data.portfolio.portfolio.enable }}
 {{ with $data.portfolio.portfolio }}
