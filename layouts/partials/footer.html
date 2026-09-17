@@ -6,13 +6,13 @@
                 
                 <div class="row">
                     {{ "<!-- Social Links -->" | safeHTML }}
-                    <div class="social-icon text-center col-sm">
+                    <div class="social-icon text-center col-12 col-lg">
                         <h2> Social Media</h2>
                         <ul class="list-inline">
                             {{ range site.Params.social }}
                             <li class="list-inline-item">
-                                <a href="{{ .link | safeHTML }}">
-                                    <i class="{{ .icon }}">
+                                <a href="{{ .link | safeHTML }}"{{ with .name }} aria-label="{{ . }}"{{ end }}>
+                                    <i class="{{ .icon }}" aria-hidden="true">
                                     {{ if .img }}
                                         <img class="social-icon social-icon-img" src="{{ .img }}">
                                     {{ end }}
@@ -25,30 +25,30 @@
 
                     {{ if  site.Params.sketchfab.enable }}
                     {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
-                    <div class="social-icon text-center col-sm">
+                    <div class="social-icon text-center col-12 col-lg footer-sketchfab">
                         <h2>{{ site.Params.sketchfab.text | markdownify }}</h2>
                         <a href="{{ site.Params.sketchfab.link | safeHTML }}" class="social-icon-a">
-                            <img class="social-icon-img" src="{{ site.Params.sketchfab.img | absURL }}" alt="{{ site.Params.sketchfab.img_alt }}"> 
+                            <img class="social-icon-img" src="{{ site.Params.sketchfab.img | absURL }}" alt="{{ site.Params.sketchfab.img_alt }}">
                         </a>
                     </div>
                     {{ end }}
 
                     {{ if  site.Params.itchio.enable }}
-                    {{ "<!-- Social Sketchfab Link -->" | safeHTML }}
-                    <div class="social-icon text-center col-sm">
+                    {{ "<!-- itch.io Link -->" | safeHTML }}
+                    <div class="social-icon text-center col-12 col-lg footer-itchio">
                         <h2>{{ site.Params.itchio.text | markdownify }}</h2>
                         <a href="{{ site.Params.itchio.link | safeHTML }}" class="social-icon-a">
-                            <img class="social-icon-img" src="{{ site.Params.itchio.img | absURL }}" alt="{{ site.Params.itchio.img_alt }}"> 
+                            <img class="social-icon-img" src="{{ site.Params.itchio.img | absURL }}" alt="{{ site.Params.itchio.img_alt }}">
                         </a>
                     </div>
                     {{ end }}
                 </div>
                 
-                <div class="border-Rinkusu" style="background: #0f1e31;"></div>
+                <div class="border-Rinkusu"></div>
                 
                 {{ "<!-- Copyright -->" | safeHTML }}
                 <div class="copyright text-center">
-                    <a href="{{ site.Home.Permalink }}">
+                    <a href="{{ site.Home.Permalink }}" aria-label="{{ site.Title }}">
                         <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Params.logo_alt }}" height="128">
                     </a>
                     <br>

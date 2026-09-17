@@ -1,4 +1,4 @@
-{{ $data := index site.Data.siteStatics.siteStatics }}
+{{ $data := index hugo.Data.siteStatics.siteStatics }}
 
 {{ if $data.enable }}
     
@@ -20,7 +20,7 @@
                             <td>Last build date:</td>
                             <td>{{ now.Format "2006-01-02"}}</td>
                         </tr>
-                        {{ if data }}
+                        {{ if $data }}
                             
                         {{ end }}
                         <tr>

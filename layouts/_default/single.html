@@ -7,42 +7,54 @@
 {{ partial "bradcrumb.html" . }}
 
 <section class="section">
-    <div class="container">
-        <div class="row bg-one">
-            
-            <div class="col-lg-8 offset-lg-2 text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 bg-one mx-auto">
+				<div class=" text-center d-flex flex-column mx-auto">
 
-                <img class="mt-4 mb-2 lozad rounded-3 img-fluid" src="{{ .Params.Image | absURL }}" alt="blog-image">
+					{{ if eq site.Params.CDN true }}
+					<img class="lozad rounded-3 img-fluid" src="{{ .Params.image_cdn }}" alt="blog-image">
+					{{ else }}
+					{{ partial "img_srcset.html" (dict "path" .Params.image "alt" "blog-image" "class" "lozad rounded-3 img-fluid" "widths" (slice 600 900 1200) "sizes" "(max-width: 992px) 100vw, 800px") }}
+					{{ end }}
 
-                <ul class="list-inline my-4 text-center">
-                    <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.Author }}</a></li>
-                    <li class="list-inline-item">Published Date: {{ with site.Params.dateFormat | default "2006-01-02" | .Date.Format }} {{ . }} {{ end }}</li>
-                    <li class="list-inline-item">Last Modified: {{ with site.Params.dateFormat | default "2006-01-02" | .Lastmod.Format }} {{ . }} {{ end }}</li>
-                </ul>
+					<ul class="list-inline mt-2 text-center">
+						<li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.Author }}</a></li>
+						<li class="list-inline-item">
+							<b>Published:</b>
+							<u>{{ with site.Params.dateFormat | default "2006-01-02" | .Date.Format }}{{ . }}{{ end }}</u>
+						</li>
+						<li class="list-inline-item">
+							<b>(Updated:</b>
+							<u>{{ with site.Params.dateFormat | default "2006-01-02" | .Lastmod.Format }}{{ . }}{{ end }}</u><b>)</b>
+						</li>
+						<li class="list-inline-item">Words: <u>{{ .WordCount }}</u></li>
+					</ul>
 
-                {{ partial "get_tags.html" . }}            
+					{{ partial "get_tags.html" . }}
+				</div>
 
-            </div>
+				<div class="mx-3">
 
-            <h1 class="text-center mx-50 px-lg-5 px-md-5">{{ .Title }}</h1>
+					<h1 class="text-center">{{ .Title }}</h1>
 
-            <div class="col-lg-8 offset-lg-2">
+					<div class="post-single-content">
+						{{ .Content }}
+					</div>
+					<div class="px-2">
+						{{ if site.Params.post_share }}
+						{{ partial "post_share.html" . }}
+						{{ end }}
 
-                <div class="post-single-content">
-                    {{ .Content }}
-                </div>
-                    {{ if site.Params.post_share }}
-                        {{ partial "post_share.html" . }}
-                    {{ end }}
-
-                    <!-- comments -->
-                    {{ if site.Params.comments }}
-                        {{ partial "comments.html" . }}
-                    {{ end }}
-                </div>
-            </div>
-        </div>
-    </div>
+						<!-- comments -->
+						{{ if site.Params.comments }}
+						{{ partial "comments.html" . }}
+						{{ end }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 {{ end }}

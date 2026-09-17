@@ -1,22 +1,40 @@
 <article class="col-sm-6 col-lg-4 mb-4 clearfix" data-wow-duration="500ms">
-	<div class="card post-block border-glow-2">
-		<div class="card-img">
-			<img class="img-fluid" src="{{ if eq site.Params.CDN true }}{{ .Params.image_cdn }}{{ else }}{{ .Params.image | absURL }}{{ end }}" alt="{{ .Params.image_alt }}">
-		</div>
+	<div class="cyberpunk-card">
+		<div class="post-block">
 
-		{{ partial "get_tags.html" . }}
-
-		<div class="content pt-0">
-			<small>
-				{{ .Params.Date | time.Format site.Params.dateFormat }}
-				{{ if eq .Params.lastmod .Params.Date }}
+			<div class="card-img position-relative">
+				{{ if eq site.Params.CDN true }}
+				<img class="img-fluid" src="{{ .Params.image_cdn }}" alt="{{ .Params.image_alt }}">
 				{{ else }}
-				&middot; {{ i18n "updated" }} {{ .Params.Lastmod | time.Format site.Params.dateFormat }}
+				{{ partial "img_srcset.html" (dict "path" .Params.image "alt" .Params.image_alt "class" "img-fluid" "widths" (slice 400 800 1200) "sizes" "(max-width: 576px) 100vw, (max-width: 992px) 50vw, 400px") }}
 				{{ end }}
-			</small>
-			<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-			<p>{{ .Plain | htmlUnescape | truncate 256 }}</p>
-			<a class="btn btn-transparent" href="{{ .Permalink }}" aria-label="Read more about {{ .Title }}">{{ i18n "readMore" }}</a>
+			</div>
+
+			<div class="card-body">
+
+				{{ partial "get_tags.html" . }}
+
+				<div class="content pt-0">
+					<small class="text-mono d-block mb-2">
+						{{ .Params.Date | time.Format site.Params.dateFormat }}
+						{{ if ne .Params.lastmod .Params.Date }}
+						&middot; {{ i18n "updated" }} {{ .Params.Lastmod | time.Format site.Params.dateFormat }}
+						{{ end }}
+					</small>
+
+					<h3 class="card-title">
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
+					</h3>
+
+					<p class="card-text text-muted">
+						{{ .Description | htmlUnescape | truncate 180 }}
+					</p>
+
+					<a class="btn btn-cyber mt-3" href="{{ .Permalink }}" aria-label="Read more about {{ .Title }}">
+						{{ i18n "readMore" }}
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </article>

@@ -6,7 +6,7 @@
 
 {{ partial "bradcrumb.html" . }}
 
-{{ $data := index site.Data.about }}
+{{ $data := index hugo.Data.about }}
 
 {{"<!-- About Section -->" | safeHTML}}
 
@@ -28,12 +28,13 @@
 
 <section class="section">
     <div class="container">
-    {{ range .sections  }}
-        {{- $align := .align}}
-        {{- $original := resources.Get .image -}}
+    {{ $sections := .sections }}
+    {{ range $i, $s := $sections }}
+        {{- $align := $s.align}}
+        {{- $original := resources.Get $s.image -}}
         {{ $image := $original.Fit "512x512" }}
         <div class="row align-items-center text-center">
-            <div class="col-md-4 
+            <div class="col-md-4
         {{- if eq $align "left" -}}
             {{- printf " justify-content-start order-first" -}}
         {{- else if eq $align "right" -}}
@@ -46,18 +47,23 @@
 
             <div class="col-md-8">
                 <h1 class="mb-20">
-                    {{ .title }}
+                    {{ $s.title }}
                 </h1>
 
                 <h5 class="mb-20">
-                    {{ .subtitle }}
+                    {{ $s.subtitle }}
                 </h5>
 
                 <p class="mb-20">
-                    {{ .content }}
+                    {{ $s.content }}
                 </p>
             </div>
         </div>
+
+        {{ if lt (add $i 1) (len $sections) }}
+        <div style="margin: 1rem 0;"><div class="border-Rinkusu"></div></div>
+        {{ end }}
+
         {{ end }}
     </div>
 </section>

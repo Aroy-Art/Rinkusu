@@ -1,17 +1,16 @@
 {{ if site.Params.breadcrumbs }}
-{{"<!-- Bradcrumb Section -->" | safeHTML}}
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+{{"<!-- Breadcrumb Section -->" | safeHTML}}
+<div class="breadcrumb-wrap">
+    <div class="container">
         <nav aria-label="breadcrumb">
-            <!-- <p> You are hear ↓↓↓</p> -->
             <ol class="breadcrumb">
                 {{- range .Ancestors.Reverse }}
-                <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ if .IsHome }}Home{{ else }}{{ .Title }}{{ end }}</a></li>
                 {{- end }}
-                <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+<li class="breadcrumb-item breadcrumb-current"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
             </ol>
         </nav>
     </div>
-</nav>
-{{"<!-- /Bradcrumb Section -->" | safeHTML}}
+</div>
+{{"<!-- /Breadcrumb Section -->" | safeHTML}}
 {{ end }}

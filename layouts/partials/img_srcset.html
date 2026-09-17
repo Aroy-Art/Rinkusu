@@ -1,0 +1,55 @@
+{{- /*
+  Responsive image partial — srcset with WebP + original format.
+  Falls back to plain <img> for GIF, SVG, missing, or empty paths.
+
+  Params (dict):
+    path    string   image path from front matter (e.g. /images/blog/foo.jpg)
+    alt     string   alt text
+    class   string   CSS classes on the <img>
+    widths  []int    widths to generate  (default: [800 1200])
+    sizes   string   CSS sizes value     (default: "100vw")
+    loading string   loading attribute   (default: "lazy")
+*/ -}}
+{{- $path    := .path -}}
+{{- $alt     := .alt     | default "" -}}
+{{- $class   := .class   | default "" -}}
+{{- $widths  := .widths  | default (slice 800 1200) -}}
+{{- $sizes   := .sizes   | default "100vw" -}}
+{{- $loading := .loading | default "lazy" -}}
+
+{{- if $path -}}
+  {{- $cleanPath := strings.TrimPrefix "/" $path -}}
+  {{- $src       := resources.Get $cleanPath -}}
+  {{- $ext       := path.Ext $cleanPath | lower -}}
+  {{- $skip      := or (eq $ext ".gif") (eq $ext ".svg") -}}
+
+  {{- if and $src (not $skip) -}}
+    {{- $origFmt  := "jpg" -}}
+    {{- if eq $ext ".png"  -}}{{- $origFmt = "png"  -}}{{- end -}}
+    {{- if eq $ext ".webp" -}}{{- $origFmt = "webp" -}}{{- end -}}
+
+    {{- $origMime := "image/jpeg" -}}
+    {{- if eq $origFmt "png"  -}}{{- $origMime = "image/png"  -}}{{- end -}}
+    {{- if eq $origFmt "webp" -}}{{- $origMime = "image/webp" -}}{{- end -}}
+
+    {{- $webpSet := slice -}}
+    {{- $origSet := slice -}}
+    {{- range $widths -}}
+      {{- $ww := $src.Resize (printf "%dx webp q85" .) -}}
+      {{- $wo := $src.Resize (printf "%dx %s q85" . $origFmt) -}}
+      {{- $webpSet = $webpSet | append (printf "%s %dw" $ww.RelPermalink .) -}}
+      {{- $origSet = $origSet | append (printf "%s %dw" $wo.RelPermalink .) -}}
+    {{- end -}}
+
+    {{- $fallback := $src.Resize (printf "%dx %s q85" (index $widths 0) $origFmt) -}}
+    <picture>
+      <source type="image/webp" srcset="{{ delimit $webpSet ", " }}" sizes="{{ $sizes }}">
+      {{- if ne $origFmt "webp" }}
+      <source type="{{ $origMime }}" srcset="{{ delimit $origSet ", " }}" sizes="{{ $sizes }}">
+      {{- end }}
+      <img class="{{ $class }}" src="{{ $fallback.RelPermalink }}" alt="{{ $alt }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" loading="{{ $loading }}">
+    </picture>
+  {{- else -}}
+    <img class="{{ $class }}" src="{{ $path | absURL }}" alt="{{ $alt }}" loading="{{ $loading }}">
+  {{- end -}}
+{{- end -}}

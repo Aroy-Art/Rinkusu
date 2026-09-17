@@ -1,4 +1,4 @@
-{{ $data := index site.Data.itchio }}
+{{ $data := index hugo.Data.itchio }}
 
 {{ with $data.itchio }}
 {{ "<!-- Itch.io Slide Show -->" | safeHTML }}
@@ -34,6 +34,9 @@
                                         {{ $image := $original.Fit "1080x1080" }}
                                         <img class="img-fluid" src="{{ $thumb.RelPermalink }}" alt="{{ .name }}" title="{{ .name }}">
                                     {{ end }}
+                                {{ end }}
+                                {{ if .show_title }}
+                                <div class="itch-item-title"{{ if .title_size }} style="font-size: {{ .title_size }}"{{ end }}>{{ .name }}</div>
                                 {{ end }}
                                 <a class="itch-play-button" href="{{ .link }}">Play on Itch.io</a>
                                 </div>

@@ -1,4 +1,4 @@
-{{ $data := index site.Data.portfolio }}
+{{ $data := index hugo.Data.portfolio }}
 
 {{ with $data.portfolio }}
 {{ "<!-- Image Slide Show -->" | safeHTML }}
