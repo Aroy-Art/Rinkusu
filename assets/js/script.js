@@ -7,6 +7,23 @@ $(window).on('load', function () {
 });
 
 /* ========================================================================= */
+/*	Sticky navbar — expand to full width when stuck
+/* ========================================================================= */
+(function () {
+    const nav = document.getElementById('navigation');
+    if (!nav) return;
+
+    const sentinel = document.createElement('div');
+    sentinel.style.cssText = 'height:1px;margin:0;padding:0;border:none;visibility:hidden;pointer-events:none;';
+    nav.parentNode.insertBefore(sentinel, nav);
+
+    new IntersectionObserver(
+        ([entry]) => nav.classList.toggle('is-stuck', !entry.isIntersecting),
+        { threshold: 0 }
+    ).observe(sentinel);
+})();
+
+/* ========================================================================= */
 /*	lazy load initialize
 /* ========================================================================= */
 const observer = lozad(); // lazy loads elements with default selector as ".lozad"
