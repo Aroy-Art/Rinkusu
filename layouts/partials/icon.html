@@ -1,0 +1,10 @@
+{{- /* Inline SVG icon from assets/icons. Usage: partial "icon.html" (dict "name" "lucide/info" "class" "optional-class") */ -}}
+{{- $name := .name -}}
+{{- with resources.Get (printf "icons/%s.svg" $name) -}}
+    {{- $class := printf "icon icon-%s" (path.Dir $name) -}}
+    {{- with $.class }}{{ $class = printf "%s %s" $class . }}{{ end -}}
+    {{- $svg := .Content | replaceRE `(?s)<!--.*?-->` "" | replaceRE `<title>[^<]*</title>` "" | replaceRE `\s+(class|role)="[^"]*"` "" -}}
+    {{- replaceRE `<svg` (printf `<svg class="%s" aria-hidden="true" focusable="false"` $class) $svg 1 | safeHTML -}}
+{{- else -}}
+    {{- warnf "icon.html: icon %q not found in assets/icons" $name -}}
+{{- end -}}

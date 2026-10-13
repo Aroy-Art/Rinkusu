@@ -12,7 +12,8 @@
                             {{ range site.Params.social }}
                             <li class="list-inline-item">
                                 <a href="{{ .link | safeHTML }}"{{ with .name }} aria-label="{{ . }}"{{ end }}>
-                                    <i class="{{ .icon }}" aria-hidden="true">
+                                    <i aria-hidden="true">
+                                    {{ with .icon }}{{ partial "icon.html" (dict "name" .) }}{{ end }}
                                     {{ if .img }}
                                         <img class="social-icon social-icon-img" src="{{ .img }}">
                                     {{ end }}
