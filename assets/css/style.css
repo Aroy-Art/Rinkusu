@@ -1104,13 +1104,14 @@ pre.chroma {
     display: inline-block;
     height: 60px;
     width: 60px;
+    line-height: 60px;
     border-radius: 50px;
 }
 
-.hero-area .block .video-button i {
-    line-height: 60px;
+.hero-area .block .video-button .icon {
     font-size: 20px;
     margin-left: 3px;
+    vertical-align: middle;
 }
 
 .hero-area .block h1 {
@@ -1231,6 +1232,15 @@ pre.chroma {
     background-size: 0% 2px;
 }
 
+#top .icon {
+    filter: drop-shadow(0 0 6px rgba(87, 203, 204, 0.4));
+    transition: filter 350ms ease-out;
+}
+
+#top:hover .icon {
+    filter: drop-shadow(0 0 10px #ff00d4);
+}
+
 
 /*=================================================================
     Banner
@@ -1267,13 +1277,14 @@ pre.chroma {
     display: inline-block;
     height: 60px;
     width: 60px;
+    line-height: 60px;
     border-radius: 50px;
 }
 
-.hero-area .block .video-button i {
-    line-height: 60px;
+.hero-area .block .video-button .icon {
     font-size: 20px;
     margin-left: 3px;
+    vertical-align: middle;
 }
 
 .hero-area .block h1 {
@@ -1735,6 +1746,10 @@ pre.chroma {
     color: #ff00d4;
     opacity: 1;
     text-shadow: 0 0 10px #ff00d4;
+}
+
+.social-icon ul li a:hover i .icon {
+    filter: drop-shadow(0 0 10px #ff00d4);
 }
 
 .social-icon ul li a i {
@@ -2574,4 +2589,25 @@ input.input {
   
 .cookie-box-hide {
     display: none;
+}
+
+/*=================================================================
+  Inline SVG icons (partials/icon.html)
+==================================================================*/
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    vertical-align: -0.125em;
+    transition: filter 350ms ease-out;
+}
+
+.icon-brand {
+    fill: currentColor;
+}
+
+.alert .icon {
+    font-size: 28px;
 }

@@ -30,7 +30,7 @@
     <div class="block">
         {{ if .icon }}
         <div class="video-button">
-            <i class="{{ .icon }}"></i>
+            {{ partial "icon.html" (dict "name" .icon) }}
         </div>
         {{ end }}
         <h1>{{ .title | markdownify }}</h1>
